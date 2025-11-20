@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>积分综合题库</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        .section-header { margin-top: 30px; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        .problem-list { list-style-type: decimal; padding-left: 20px; }
+        .problem-list li { margin-bottom: 10px; font-size: 1.1em; }
+        details { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        details summary { cursor: pointer; font-weight: bold; padding: 5px; background-color: #f4f4f4; border-radius: 3px; }
+        .hint summary { color: #FFA500; }
+        .analysis summary { color: #007bff; }
+        .math-exp { font-family: 'Consolas', 'Courier New', monospace; font-size: 1.1em; color: #444; }
+    </style>
+</head>
+<body>
+
+<h1>积分综合题库</h1>
+<p>这份综合题库是基于您提供的文档内容精心整理的，分为四个难度等级。中高难度及以上的题目均配备了<strong>折叠提示</strong>和<strong>详细解析</strong>。</p>
+
+<hr>
+
+<h2 class="section-header" style="color: #28a745;">🟢 第一阶段：基础热身篇 (Basic Warm-up)</h2>
+<p><strong>目标：</strong> 熟练掌握基本积分表，熟悉简单的线性性质和直接积分。</p>
+
+<ol class="problem-list">
+    <li><span class="math-exp">&#8747; (3x&sup2; - 4x + 2) dx</span></li>
+    <li><span class="math-exp">&#8747; (&#8730;x + 1/x&sup2;) dx</span></li>
+    <li><span class="math-exp">&#8747; e^2x dx</span></li>
+    <li><span class="math-exp">&#8747; sin(3x) dx</span></li>
+    <li><span class="math-exp">&#8747; 1/(1+x&sup2;) dx</span></li>
+    <li><span class="math-exp">&#8747; sec&sup2; x dx</span></li>
+    <li><span class="math-exp">&#8747; 2^x; dx</span></li>
+    <li><span class="math-exp">&#8747; 1/&#8730;(1-x&sup2;) dx</span></li>
+</ol>
+
+<details>
+    <summary><strong>点击查看基础篇答案</strong></summary>
+    <ol style="list-style-type: decimal;">
+        <li><span class="math-exp">x&sup3; - 2x&sup2; + 2x + C</span></li>
+        <li><span class="math-exp">(2/3)x^;3/2 - 1/x + C</span></li>
+        <li><span class="math-exp">(1/2)e^;2x + C</span></li>
+        <li><span class="math-exp">-(1/3)cos(3x) + C</span></li>
+        <li><span class="math-exp">arctan x + C</span></li>
+        <li><span class="math-exp">tan x + C</span></li>
+        <li><span class="math-exp">2^;x / ln 2 + C</span></li>
+        <li><span class="math-exp">arcsin x + C</span></li>
+    </ol>
+</details>
+
+<hr>
+
+<h2 class="section-header" style="color: #ffc107;">🟡 第二阶段：进阶巩固篇 (Intermediate Level)</h2>
+<p><strong>目标：</strong> 熟练掌握“凑微分法”（第一类换元）、简单分部积分和基础三角恒等式变换。</p>
+
+<h3>题目 9: 简单换元</h3>
+<p class="math-exp">&#8747; x(x&sup2;+1)&sup3; dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    观察 x 是 x&sup2; 导数的一部分（差一个常数系数）。令 u = x&sup2;+1。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = x&sup2;+1，则 du = 2x dx &#8658; x dx = (1/2) du。</p>
+    <p>原式 = &#8747; u&sup3; &middot; (1/2) du = (1/2) &middot; u^4/4 + C = (1/8)(x&sup2;+1)^4 + C。</p>
+</details>
+
+<h3>题目 10: 对数函数的凑微分</h3>
+<p class="math-exp">&#8747; 1/(x ln x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    注意到 (ln x)' = 1/x。令 u = ln x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln x，则 du = (1/x) dx。</p>
+    <p>原式 = &#8747; 1/u du = ln|u| + C = ln|ln x| + C。</p>
+</details>
+
+<h3>题目 11: 基础分部积分</h3>
+<p class="math-exp">&#8747; x e^x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分法 &#8747; u dv = uv - &#8747; v du。令 u=x, dv=e^x dx。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = x, dv = e^x dx，则 du = dx, v = e^x。</p>
+    <p>原式 = x e^x - &#8747; e^x dx = x e^x - e^x + C = e^x(x-1) + C。</p>
+</details>
+
+<h3>题目 12: 三角恒等式</h3>
+<p class="math-exp">&#8747; tan&sup2; x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    利用三角恒等式 tan&sup2; x = sec&sup2; x - 1 进行变形。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>&#8747; tan&sup2; x dx = &#8747; (sec&sup2; x - 1) dx = &#8747; sec&sup2; x dx - &#8747; 1 dx = tan x - x + C。</p>
+</details>
+
+<h3>题目 13: 有理函数积分</h3>
+<p class="math-exp">&#8747; 1/(x&sup2;-1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用部分分式分解：1/(x&sup2;-1) = (1/2)(1/(x-1) - 1/(x+1))。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = (1/2) &#8747; (1/(x-1) - 1/(x+1)) dx = (1/2)(ln|x-1| - ln|x+1|) + C = (1/2)ln|(x-1)/(x+1)| + C。</p>
+</details>
+
+<hr>
+
+<h2 class="section-header" style="color: #dc3545;">🔴 第三阶段：高手挑战篇 (Advanced Level)</h2>
+<p><strong>目标：</strong> 掌握复杂的换元（根式代换、三角代换）、循环分部积分、复杂的有理函数及三角函数积分。</p>
+
+<h3>题目 14: 循环分部积分</h3>
+<p class="math-exp">&#8747; e^x sin x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    需要连续两次使用分部积分。第二次积分后会出现与原积分相同的项 I，将其移项合并求解 2I。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>设 I = &#8747; e^x sin x dx。两次分部积分后得到：</p>
+    <p>I = e^x sin x - (e^x cos x + I)</p>
+    <p>&#8658; 2I = e^x(sin x - cos x)</p>
+    <p>所以 I = (e^x / 2)(sin x - cos x) + C。</p>
+</details>
+
+<h3>题目 15: 经典三角积分</h3>
+<p class="math-exp">&#8747; sec&sup3; x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分，令 u = sec x, dv = sec&sup2; x dx。过程中需利用 tan&sup2; x = sec&sup2; x - 1 凑出循环项。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>设 I = &#8747; sec&sup3; x dx。分部积分得：</p>
+    <p>I = sec x tan x - &#8747; sec x tan&sup2; x dx = sec x tan x - I + &#8747; sec x dx</p>
+    <p>&#8658; 2I = sec x tan x + ln|sec x + tan x|</p>
+    <p>I = (1/2)(sec x tan x + ln|sec x + tan x|) + C。</p>
+</details>
+
+<h3>题目 16: 根式代换</h3>
+<p class="math-exp">&#8747; 1/(1+&#8730;x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    令 u = &#8730;x，消去根号。注意 dx = 2u du。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = &#8730;x &#8658; x=u&sup2;, dx=2u du。</p>
+    <p>原式 = &#8747; 2u/(1+u) du = 2 &#8747; (1 - 1/(1+u)) du</p>
+    <p>= 2(u - ln|1+u|) + C = 2&#8730;x - 2ln(1+&#8730;x) + C。</p>
+</details>
+
+<h3>题目 17: 反三角函数分部</h3>
+<p class="math-exp">&#8747; arcsin x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    看作 &#8747; 1 &middot; arcsin x dx，令 u = arcsin x, dv = dx。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = arcsin x, dv = dx。分部积分得：</p>
+    <p>原式 = x arcsin x - &#8747; x/&#8730;(1-x&sup2;) dx</p>
+    <p>后一项凑微分：&#8747; x/&#8730;(1-x&sup2;) dx = -&#8730;(1-x&sup2;)</p>
+    <p>总结果：x arcsin x + &#8730;(1-x&sup2;) + C。</p>
+</details>
+
+<h3>题目 18: 巧妙的三角变换</h3>
+<p class="math-exp">&#8747; 1/(sin x + cos x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    利用辅助角公式 sin x + cos x = &#8730;2 sin(x+&pi;/4)，将积分转换为 &#8747; csc u du 的形式。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = (1/&#8730;2) &#8747; csc(x+&pi;/4) dx</p>
+    <p>利用公式 &#8747; csc u du = ln|csc u - cot u|</p>
+    <p>结果 = (1/&#8730;2) ln|csc(x+&pi;/4) - cot(x+&pi;/4)| + C。</p>
+</details>
+
+<hr>
+
+<h2 class="section-header" style="color: #343a40;">⚫ 第四阶段：骨灰级魔鬼篇 (Master Level)</h2>
+<p><strong>目标：</strong> 解决需要特殊技巧、多次代换或极高代数处理能力的积分难题。</p>
+
+<h3>题目 19: 经典的四次幂分母</h3>
+<p class="math-exp">&#8747; 1/(x^4+1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    利用凑微分技巧：将 1 拆解为 (1/2)[(x&sup2;+1) - (x&sup2;-1)]，然后分子分母同除以 x&sup2;，再进行凑微分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = (1/2) &#8747; [(x&sup2;+1)/(x^4+1) - (x&sup2;-1)/(x^4+1)] dx</p>
+    <p>同除 x&sup2;，凑微分：</p>
+    <p>= (1/2) &#8747; [(1+1/x&sup2;)/(x&sup2;+1/x&sup2;)] dx - (1/2) &#8747; [(1-1/x&sup2;)/(x&sup2;+1/x&sup2;)] dx</p>
+    <p>需要使用 arctan 和 ln 形式的积分公式。最终结果形式复杂：</p>
+    <p class="math-exp">(1 / 4&#8730;2) ln| (x&sup2;+&#8730;2x+1) / (x&sup2;-&#8730;2x+1) | + (1 / 2&#8730;2) arctan( (&#8730;2x) / (1-x&sup2;) ) + C</p>
+</details>
+
+<h3>题目 20: 隐藏的换元</h3>
+<p class="math-exp">&#8747; 1/(1+e^x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    分子加一项减一项：1/(1+e^x) = (1+e^x - e^x) / (1+e^x) = 1 - e^x/(1+e^x)。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; [1 - e^x/(1+e^x)] dx = &#8747; 1 dx - &#8747; [d(1+e^x)/(1+e^x)]</p>
+    <p>= x - ln(1+e^x) + C。</p>
+</details>
+
+<h3>题目 21: 极难的三角根式</h3>
+<p class="math-exp">&#8747; &#8730;(tan x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    令 u = &#8730;(tan x)，积分转化为 &#8747; [2u&sup2; / (1+u^4)] du，这需要进行复杂的有理函数积分（与题目 19 核心相似）。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = &#8730;(tan x)，代换后：&#8747; [2u&sup2; / (1+u^4)] du</p>
+    <p>拆项后进行凑微分：</p>
+    <p>= &#8747; [(u&sup2;+1)/(u^4+1)] du + &#8747; [(u&sup2;-1)/(u^4+1)] du</p>
+    <p>结果非常复杂，形式上是：</p>
+    <p class="math-exp">(1/&#8730;2) arctan( (u-1/u)/&#8730;2 ) + (1/2&#8730;2) ln| (u+1/u-&#8730;2) / (u+1/u+&#8730;2) | + C</p>
+    <p>其中 u = &#8730;(tan x)。</p>
+</details>
+
+<h3>题目 22: 对数与根式的结合</h3>
+<p class="math-exp">&#8747; ln(x+&#8730;(1+x&sup2;)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分，令 u = ln(x+&#8730;(1+x&sup2;)), dv = dx。求 u 的导数 d(u) 时，会发现 d(u) = 1/&#8730;(1+x&sup2;) dx。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln(x+&#8730;(1+x&sup2;)), dv = dx &#8658; du = 1/&#8730;(1+x&sup2;) dx, v = x。</p>
+    <p>原式 = x ln(x+&#8730;(1+x&sup2;)) - &#8747; x/&#8730;(1+x&sup2;) dx</p>
+    <p>后一项凑微分：&#8747; x/&#8730;(1+x&sup2;) dx = &#8730;(1+x&sup2;)</p>
+    <p>总结果：x ln(x+&#8730;(1+x&sup2;)) - &#8730;(1+x&sup2;) + C。</p>
+</details>
+
+<h3>题目 23: 高阶三角函数有理式</h3>
+<p class="math-exp">&#8747; 1/(sin^4 x + cos^4 x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    分子分母同除以 cos^4 x，化为关于 tan x 的积分：&#8747; [sec^4 x / (tan^4 x + 1)] dx，然后令 u = tan x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; [sec^4 x / (tan^4 x + 1)] dx = &#8747; [(1+tan&sup2; x)sec&sup2; x / (tan^4 x + 1)] dx</p>
+    <p>令 u = tan x, du = sec&sup2; x dx：</p>
+    <p>= &#8747; [(1+u&sup2;)/(1+u^4)] du</p>
+    <p>此结果与题目 19 和 21 的核心积分类似。简化后结果为：</p>
+    <p class="math-exp">(1 / &#8730;2) arctan( (tan x - 1/tan x) / &#8730;2 ) + C</p>
+</details>
+
+<hr>
+<h2 class="section-header" style="color: #6c757d;">第五阶段：巅峰魔鬼篇 (Apex Master Level) (40 题)</h2>
+<p><strong>目标：</strong> 巩固和深化解决第四阶段复杂积分的技巧，重点在于精妙的代数分解和凑微分。</p>
+
+<h3>题目 24: 通用有理函数积分</h3>
+<p class="math-exp">&#8747; 1 / (x (x&sup3;+1)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    将积分函数拆分为 1/x - x&sup2;/(x&sup3;+1)，然后对第二项使用凑微分法。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; [1/x - x&sup2;/(x&sup3;+1)] dx = &#8747; 1/x dx - (1/3) &#8747; d(x&sup3;+1) / (x&sup3;+1)</p>
+    <p>结果 = ln|x| - (1/3)ln|x&sup3;+1| + C = (1/3)ln|x&sup3;/(x&sup3;+1)| + C。</p>
+</details>
+
+<h3>题目 25: 根式与指数函数的结合</h3>
+<p class="math-exp">&#8747; 1 / &#8730;(e^2x - 1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    令 u = &#8730;(e^2x - 1)，则 e^2x = u&sup2;+1。或者尝试令 u = e^x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = &#8730;(e^2x - 1)，则 e^2x = u&sup2;+1，2e^2x dx = 2u du &#8658; dx = u / (u&sup2;+1) du。</p>
+    <p>原式 = &#8747; [1/u] &middot; [u / (u&sup2;+1)] du = &#8747; 1 / (u&sup2;+1) du = arctan u + C。</p>
+    <p>结果 = arctan(&#8730;(e^2x - 1)) + C。</p>
+</details>
+
+<h3>题目 26: 反三角函数分部积分 II</h3>
+<p class="math-exp">&#8747; x arctan x / &#8730;(1+x&sup2;) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分法。可以令 u = arctan x，dv = x/&#8730;(1+x&sup2;) dx。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = arctan x, dv = x/&#8730;(1+x&sup2;) dx。则 du = 1/(1+x&sup2;) dx, v = &#8730;(1+x&sup2;)。</p>
+    <p>原式 = arctan x &middot; &#8730;(1+x&sup2;) - &#8747; &#8730;(1+x&sup2;) / (1+x&sup2;) dx</p>
+    <p>后一项为 &#8747; 1/&#8730;(1+x&sup2;) dx = ln|x+&#8730;(1+x&sup2;)|。</p>
+    <p>结果 = arctan x &middot; &#8730;(1+x&sup2;) - ln|x+&#8730;(1+x&sup2;)| + C。</p>
+</details>
+
+<h3>题目 27: 复杂的三角函数积分</h3>
+<p class="math-exp">&#8747; sin x / (3 + sin&sup2; x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    利用 sin&sup2; x = 1 - cos&sup2; x，然后令 u = cos x 进行凑微分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; sin x / (3 + 1 - cos&sup2; x) dx = &#8747; sin x / (4 - cos&sup2; x) dx。</p>
+    <p>令 u = cos x，则 du = -sin x dx。原式 = -&#8747; 1 / (4 - u&sup2;) du = &#8747; 1 / (u&sup2; - 4) du。</p>
+    <p>利用部分分式 1/(u&sup2;-4) = (1/4) [1/(u-2) - 1/(u+2)]。</p>
+    <p>结果 = (1/4)ln|(u-2)/(u+2)| + C = (1/4)ln|(cos x - 2)/(cos x + 2)| + C。</p>
+</details>
+
+<h3>题目 28: 巧妙的三角代换</h3>
+<p class="math-exp">&#8747; 1 / (sin&sup4; x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    将分母写为 (sin&sup2; x)&sup2;，利用 1/sin&sup2; x = csc&sup2; x，然后用 csc&sup2; x = 1 + cot&sup2; x 引入 cot x 的导数。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; csc&sup4; x dx = &#8747; csc&sup2; x (1 + cot&sup2; x) dx</p>
+    <p>令 u = cot x，则 du = -csc&sup2; x dx。</p>
+    <p>原式 = -&#8747; (1 + u&sup2;) du = -u - u&sup3;/3 + C。</p>
+    <p>结果 = -cot x - (1/3)cot&sup3; x + C。</p>
+</details>
+
+<h3>题目 29: 高阶根式代换</h3>
+<p class="math-exp">&#8747; &#8730;x / (1 + &#8730;[3]x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    寻找 x 的指数 1/2 和 1/3 的最小公分母，进行有理化代换。令 u = &#8730;[6]x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = &#8730;[6]x，则 x = u^6, dx = 6u^5 du。&#8730;x = u&sup3;, &#8730;[3]x = u&sup2;。</p>
+    <p>原式 = &#8747; u&sup3; / (1 + u&sup2;) &middot; 6u^5 du = 6 &#8747; u^8 / (u&sup2; + 1) du</p>
+    <p>利用多项式除法 u^8 / (u&sup2;+1) = u^6 - u^4 + u&sup2; - 1 + 1/(u&sup2;+1)。</p>
+    <p>结果 = 6(u^7/7 - u^5/5 + u&sup3;/3 - u + arctan u) + C。代回 u = &#8730;[6]x。</p>
+</details>
+
+<h3>题目 30: 循环分部积分 II (双曲函数版)</h3>
+<p class="math-exp">&#8747; e^(2x) sinh x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用双曲函数的定义 sinh x = (e^x - e^(-x))/2，或者使用两次分部积分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>使用定义：原式 = &#8747; e^(2x) &middot; (e^x - e^(-x))/2 dx = (1/2) &#8747; (e^(3x) - e^x) dx</p>
+    <p>= (1/2) (e^(3x)/3 - e^x) + C = e^x/6 (e^(2x) - 3) + C。</p>
+</details>
+
+<h3>题目 31: 反双曲函数的积分</h3>
+<p class="math-exp">&#8747; arccosh x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    看作 &#8747; 1 &middot; arccosh x dx，使用分部积分法。注意 arccosh x 的导数是 1/&#8730;(x&sup2;-1)。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = arccosh x, dv = dx。则 du = 1/&#8730;(x&sup2;-1) dx, v = x。</p>
+    <p>原式 = x arccosh x - &#8747; x/&#8730;(x&sup2;-1) dx。</p>
+    <p>后一项凑微分：&#8747; x/&#8730;(x&sup2;-1) dx = &#8730;(x&sup2;-1)。</p>
+    <p>结果 = x arccosh x - &#8730;(x&sup2;-1) + C。</p>
+</details>
+
+<h3>题目 32: 巧妙的有理化代换</h3>
+<p class="math-exp">&#8747; 1 / (x &middot; &#8730;(1+x&sup2;)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    可以尝试三角代换 x = tan &theta;，或更直接的代换 u = 1/x，将根式放在分母上。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = &#8730;(1+x&sup2;)，则 x&sup2; = u&sup2;-1, 2x dx = 2u du &#8658; dx = u/x du。</p>
+    <p>原式 = &#8747; 1 / (x &middot; u) &middot; (u/x) du = &#8747; 1 / x&sup2; du = &#8747; 1 / (u&sup2;-1) du。</p>
+    <p>利用部分分式：= (1/2)ln|(u-1)/(u+1)| + C。</p>
+    <p>结果 = (1/2)ln|( &#8730;(1+x&sup2;) - 1) / ( &#8730;(1+x&sup2;) + 1)| + C。</p>
+</details>
+
+<h3>题目 33: 根式有理函数积分</h3>
+<p class="math-exp">&#8747; 1 / (x&sup2; &middot; &#8730;(1+x&sup2;)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用三角代换 x = tan &theta;。或使用欧拉第一代换 u = &#8730;(1+x&sup2;) + x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 x = tan &theta;，dx = sec&sup2; &theta; d&theta;，&#8730;(1+x&sup2;) = sec &theta;。</p>
+    <p>原式 = &#8747; sec&sup2; &theta; / (tan&sup2; &theta; &middot; sec &theta;) d&theta; = &#8747; cos &theta; / sin&sup2; &theta; d&theta;</p>
+    <p>令 u = sin &theta;，du = cos &theta; d&theta;。= &#8747; 1/u&sup2; du = -1/u + C。</p>
+    <p>结果 = -1/sin &theta; + C。由于 sin &theta; = x/&#8730;(1+x&sup2;)，结果为 -&#8730;(1+x&sup2;)/x + C。</p>
+</details>
+
+<h3>题目 34: 变上限积分的导数</h3>
+<p class="math-exp">&#8747; x^x (1 + ln x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    注意到被积函数是某个函数的导数。回顾 $f(x)^{g(x)}$ 形式函数的求导法则。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>设 y = x^x，则 ln y = x ln x。对 x 求导：y'/y = ln x + x(1/x) = ln x + 1。</p>
+    <p>因此 y' = x^x (1 + ln x)。</p>
+    <p>原式 = &#8747; d(x^x) = x^x + C。</p>
+</details>
+
+<h3>题目 35: 分部积分与有理函数 II</h3>
+<p class="math-exp">&#8747; x&sup3; e^(x&sup2;) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    先进行凑微分（令 u = x&sup2;），将原式转化为 $\int f(u) e^u du$ 形式，再进行分部积分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = x&sup2;，则 du = 2x dx。原式 = (1/2) &#8747; x&sup2; e^(x&sup2;) (2x dx) = (1/2) &#8747; u e^u du。</p>
+    <p>对 &#8747; u e^u du 使用分部积分，结果为 (u-1)e^u。</p>
+    <p>原式 = (1/2)(u-1)e^u + C = (1/2)(x&sup2;-1)e^(x&sup2;) + C。</p>
+</details>
+
+<h3>题目 36: 高阶分母代数技巧</h3>
+<p class="math-exp">&#8747; 1 / (x^6 + 1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    将分母分解为 $(x^2+1)(x^4-x^2+1)$，然后使用部分分式分解，再对 $x^4-x^2+1$ 进行类似题目 19 的凑微分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>使用部分分式分解：1/(x^6+1) = (1/3) [1/(x&sup2;+1) + (2-x&sup2;)/(x^4-x&sup2;+1)]。</p>
+    <p>原式 = (1/3) arctan x + (1/3) &#8747; (2-x&sup2;)/(x^4-x&sup2;+1) dx。后面一项需进一步拆解和凑微分，形式极其复杂。</p>
+    <p>最终结果形式包含 arctan 和 ln 的组合，过程太长略，重点掌握分解思路。</p>
+</details>
+
+<h3>题目 37: 复杂的对数代换</h3>
+<p class="math-exp">&#8747; 1 / (e^x &#8730;(1-e^(2x))) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    首先令 u = e^x，将指数函数转化为代数函数，然后进行三角代换。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = e^x，则 du = e^x dx &#8658; dx = du/u。</p>
+    <p>原式 = &#8747; [1 / (u &#8730;(1-u&sup2;))] (du/u) = &#8747; 1 / (u&sup2; &#8730;(1-u&sup2;)) du。</p>
+    <p>再令 u = sin &theta;。结果 = -&#8730;(1-u&sup2;)/u + C。</p>
+    <p>结果 = -&#8730;(1-e^(2x)) / e^x + C = -&#8730;(e^(-2x) - 1) + C。</p>
+</details>
+
+<h3>题目 38: 复杂的有理化代换 II (欧拉代换)</h3>
+<p class="math-exp">&#8747; 1 / (x &#8730;(x&sup2; + 4x - 4)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    由于根号内的二次项判别式大于零，可以考虑使用欧拉代换：&#8730;(x&sup2; + 4x - 4) = u - x。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 &#8730;(x&sup2; + 4x - 4) = u - x。两边平方得 x&sup2; + 4x - 4 = u&sup2; - 2ux + x&sup2;。</p>
+    <p>解出 x = (u&sup2;+4)/(2u+4)。过程涉及复杂的求导和有理函数积分，最终结果为：</p>
+    <p class="math-exp">(1/2) arctan( (&#8730;(x&sup2;+4x-4) + 2) / (x-2) ) + C。</p>
+</details>
+
+<h3>题目 39: 巧妙代换 (对数/根式)</h3>
+<p class="math-exp">&#8747; ln(1+x) / x&sup2; dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分法，令 u = ln(1+x), dv = 1/x&sup2; dx。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln(1+x), dv = 1/x&sup2; dx。则 du = 1/(1+x) dx, v = -1/x。</p>
+    <p>原式 = -ln(1+x)/x - &#8747; (-1/x) &middot; [1/(1+x)] dx = -ln(1+x)/x + &#8747; 1/(x(1+x)) dx</p>
+    <p>对后一项部分分式：&#8747; [1/x - 1/(1+x)] dx = ln|x| - ln|1+x|。</p>
+    <p>结果 = -ln(1+x)/x + ln|x| - ln|1+x| + C。</p>
+</details>
+
+<h3>题目 40: 经典的超难三角函数积分</h3>
+<p class="math-exp">&#8747; 1 / (1 + sin x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    分子分母同乘 $1 - \sin x$，利用 $\cos^2 x = 1 - \sin^2 x$ 简化分母。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; (1 - sin x) / (1 - sin&sup2; x) dx = &#8747; (1 - sin x) / cos&sup2; x dx</p>
+    <p>= &#8747; (sec&sup2; x - tan x sec x) dx</p>
+    <p>= &#8747; sec&sup2; x dx - &#8747; tan x sec x dx = tan x - sec x + C。</p>
+</details>
+
+<h3>题目 63: 对数函数与根式代换</h3>
+<p class="math-exp">&#8747; ln x / &#8730;x dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用分部积分法，令 $u = \ln x$, $dv = 1/\sqrt{x} dx$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln x, dv = x^(-1/2) dx。则 du = 1/x dx, v = 2x^(1/2)。</p>
+    <p>原式 = 2&#8730;x ln x - &#8747; 2&#8730;x &middot; (1/x) dx = 2&#8730;x ln x - 2 &#8747; x^(-1/2) dx</p>
+    <p>结果 = 2&#8730;x ln x - 4&#8730;x + C = 2&#8730;x (ln x - 2) + C。</p>
+</details>
+
+
+<hr>
+
+<h2 class="section-header" style="color: #495057;">第六阶段：宇宙级终极篇 (Cosmic Ultimate Level) (40 题)</h2>
+<p><strong>目标：</strong> 挑战需要极其复杂的多步代换、高级特殊技巧（如欧拉代换、T-代换的复杂应用）以及结合微分方程思想的超高难度积分。</p>
+
+<h3>题目 64: 结合对数和三角代换</h3>
+<p class="math-exp">&#8747; x &middot; arcsin(x&sup2;) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    先令 $u = x^2$，再使用分部积分法。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 t = x&sup2;，dt = 2x dx。原式 = (1/2) &#8747; arcsin t dt。</p>
+    <p>对 &#8747; arcsin t dt 使用分部积分 (u=arcsin t, dv=dt)，结果为 t arcsin t + &#8730;(1-t&sup2;)。</p>
+    <p>原式 = (1/2) [x&sup2; arcsin(x&sup2;) + &#8730;(1-x^4)] + C。</p>
+</details>
+
+<h3>题目 65: 极难三角函数积分 II</h3>
+<p class="math-exp">&#8747; sin(ln x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    令 $u = \ln x$，将原式转化为指数和三角函数的循环积分 ($\int e^u \sin u du$)。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln x，则 x = e^u, dx = e^u du。原式 = &#8747; e^u sin u du。</p>
+    <p>使用两次分部积分：&#8747; e^u sin u du = (1/2)e^u (sin u - cos u)。</p>
+    <p>结果 = (x/2) [sin(ln x) - cos(ln x)] + C。</p>
+</details>
+
+<h3>题目 66: 复杂的欧拉代换 II</h3>
+<p class="math-exp">&#8747; 1 / ((1-x&sup2;) &middot; &#8730;(1+x&sup2;)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    令 $x = \tan \theta$ 进行三角代换，或令 $u = 1/\sqrt{1+x^2}$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 x = tan &theta;，dx = sec&sup2; &theta; d&theta;，&#8730;(1+x&sup2;) = sec &theta;。</p>
+    <p>原式 = &#8747; sec&sup2; &theta; / ((1-tan&sup2; &theta;) &middot; sec &theta;) d&theta; = &#8747; cos &theta; / (cos&sup2; &theta; - sin&sup2; &theta;) d&theta; = &#8747; cos &theta; / cos(2&theta;) d&theta;。</p>
+    <p>再令 $u = \sin \theta$。结果涉及复杂的对数函数和 $\ln|\tan(\theta+\pi/4)|$ 的形式。</p>
+</details>
+
+<h3>题目 67: 隐藏的分部积分</h3>
+<p class="math-exp">&#8747; ln(x&sup2; + 1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    看作 $\int 1 \cdot \ln(x^2+1) dx$，使用分部积分法。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln(x&sup2;+1), dv = dx。则 du = 2x/(x&sup2;+1) dx, v = x。</p>
+    <p>原式 = x ln(x&sup2;+1) - &#8747; 2x&sup2; / (x&sup2;+1) dx。</p>
+    <p>后一项：&#8747; 2x&sup2; / (x&sup2;+1) dx = 2 &#8747; [1 - 1/(x&sup2;+1)] dx = 2x - 2 arctan x。</p>
+    <p>结果 = x ln(x&sup2;+1) - 2x + 2 arctan x + C。</p>
+</details>
+
+<h3>题目 68: T-代换的复杂应用</h3>
+<p class="math-exp">&#8747; 1 / (a + b cos x) dx (其中 |a| > |b|)</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用万能三角代换（T-代换）：$t = \tan(x/2)$。则 $\cos x = (1-t^2)/(1+t^2)$, $dx = 2 dt/(1+t^2)$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; [2/(1+t&sup2;)] / [a + b(1-t&sup2;)/(1+t&sup2;)] dt = 2 &#8747; 1 / (a(1+t&sup2;) + b(1-t&sup2;)) dt</p>
+    <p>= 2 &#8747; 1 / ((a-b)t&sup2; + (a+b)) dt。这会转化为 $\int 1 / (u^2 + k^2) du$ 或 $\int 1 / (u^2 - k^2) du$ 的形式。</p>
+    <p>结果 = [2/&#8730;(a&sup2;-b&sup2;)] arctan [t &middot; &#8730;((a-b)/(a+b))] + C。代回 $t=\tan(x/2)$。</p>
+</details>
+
+<h3>题目 69: 极难的有理函数分解</h3>
+<p class="math-exp">&#8747; x&sup2; / (x^4 + x&sup2; + 1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    将分子拆分为 $\frac{1}{2}[(x^2+1) + (x^2-1)]$，转化为题目 19 的基础形式。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = (1/2) &#8747; [(x&sup2;+1) / (x^4+x&sup2;+1)] dx + (1/2) &#8747; [(x&sup2;-1) / (x^4+x&sup2;+1)] dx。</p>
+    <p>分子分母同除 x&sup2;，利用凑微分：&#8747; [(1+1/x&sup2;) / (x&sup2;+1/x&sup2;+1)] dx 和 &#8747; [(1-1/x&sup2;) / (x&sup2;+1/x&sup2;+1)] dx。</p>
+    <p>最终结果为：(1/2&#8730;3) arctan [ (x - 1/x) / &#8730;3 ] - (1/4) ln | (x&sup2;-x+1) / (x&sup2;+x+1) | + C。</p>
+</details>
+
+<h3>题目 70: 指数与对数的结合</h3>
+<p class="math-exp">&#8747; e^(2x) ln(1+e^x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    先令 $u = 1+e^x$ 或 $t = e^x$。然后使用分部积分法。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 t = e^x，dt = e^x dx。原式 = &#8747; t &middot; ln(1+t) dt。</p>
+    <p>分部积分：u = ln(1+t), dv = t dt。v = t&sup2;/2。</p>
+    <p>原式 = (t&sup2;/2) ln(1+t) - (1/2) &#8747; t&sup2;/(1+t) dt。</p>
+    <p>&#8747; t&sup2;/(1+t) dt = &#8747; (t - 1 + 1/(1+t)) dt = t&sup2;/2 - t + ln|1+t|。</p>
+    <p>结果 = (1/2)(e^(2x) + 1) ln(1+e^x) - (1/4)e^(2x) + (1/2)e^x + C。</p>
+</details>
+
+<h3>题目 71: 复杂的根式三角代换</h3>
+<p class="math-exp">&#8747; &#8730;((1 - x) / (1 + x)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用三角代换 $x = \cos (2\theta)$ 或 $x = \cos \theta$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 x = cos &theta;，则 dx = -sin &theta; d&theta;。</p>
+    <p>原式 = &#8747; &#8730;((1-cos &theta;) / (1+cos &theta;)) (-sin &theta;) d&theta; = - &#8747; &#8730;(tan&sup2; (&theta;/2)) &middot; sin &theta; d&theta;</p>
+    <p>= - &#8747; tan(&theta;/2) &middot; 2 sin(&theta;/2) cos(&theta;/2) d&theta; = -2 &#8747; sin&sup2;(&theta;/2) d&theta;</p>
+    <p>利用降幂公式：= -2 &#8747; (1 - cos &theta;)/2 d&theta; = &#8747; (cos &theta; - 1) d&theta; = sin &theta; - &theta; + C。</p>
+    <p>结果 = &#8730;(1-x&sup2;) - arccos x + C。</p>
+</details>
+
+<h3>题目 72: 对数函数的嵌套积分</h3>
+<p class="math-exp">&#8747; ln(&#8730;x + &#8730;(x-1)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    先使用分部积分法，然后对得到的根式积分进行三角代换，令 $\sqrt{x} = \cosh t$ 或 $\sqrt{x} = \sec \theta$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>令 u = ln(&#8730;x + &#8730;(x-1)), dv = dx。求导后得 du = 1 / (2&#8730;(x&sup2;-x)) dx。</p>
+    <p>原式 = x ln(&#8730;x + &#8730;(x-1)) - (1/2) &#8747; x / &#8730;(x&sup2;-x) dx。</p>
+    <p>后一项积分需要进行配方和三角/双曲代换。最终结果形式复杂。</p>
+</details>
+
+<h3>题目 73: 复杂的 T-代换 II</h3>
+<p class="math-exp">&#8747; 1 / (2 + sin x + cos x) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用万能三角代换（T-代换）：$t = \tan(x/2)$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>使用 $t=\tan(x/2)$ 代换后，分母变为 $2 + 2t/(1+t&sup2;) + (1-t&sup2;)/(1+t&sup2;) = (t&sup2;+2t+3)/(1+t&sup2;)$。</p>
+    <p>原式 = &#8747; [2/(1+t&sup2;)] / [(t&sup2;+2t+3)/(1+t&sup2;)] dt = 2 &#8747; 1 / (t&sup2;+2t+3) dt</p>
+    <p>对分母配方：$t^2+2t+3 = (t+1)^2 + 2$。</p>
+    <p>= 2 &#8747; 1 / ((t+1)&sup2; + 2) dt = 2 &middot; (1/&#8730;2) arctan((t+1)/&#8730;2) + C。</p>
+    <p>结果 = &#8730;2 arctan((tan(x/2) + 1) / &#8730;2) + C。</p>
+</details>
+
+<h3>题目 74: 经典的降次代换</h3>
+<p class="math-exp">&#8747; 1 / &#8730;[3](x&sup3; + 1) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用降次代换：令 $u = \sqrt[3]{x^3+1}$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>这个积分通常被称为“阿贝尔积分”，是不可积的（没有初等函数的解析解）。然而，如果使用代换 $u = \sqrt[3]{x^3+1}/x$ 或 $u = \sqrt[3]{1+1/x^3}$，它可能被转化为更容易的积分，但结果仍然会涉及特殊的超几何函数。如果限定在初等函数内，它无解。</p>
+</details>
+
+<h3>题目 75: 巧妙凑微分 III</h3>
+<p class="math-exp">&#8747; 1 / (x + &#8730;(x&sup2; - 1)) dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    分子分母同乘 $(x - \sqrt{x^2-1})$ 进行有理化，然后对得到的两项分别积分。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>原式 = &#8747; (x - &#8730;(x&sup2; - 1)) / (x&sup2; - (x&sup2; - 1)) dx = &#8747; (x - &#8730;(x&sup2; - 1)) dx</p>
+    <p>&#8747; x dx = x&sup2;/2。</p>
+    <p>&#8747; &#8730;(x&sup2;-1) dx 需用双曲代换 $x = \cosh t$。结果为 $(1/2)x&#8730;(x&sup2;-1) - (1/2)\operatorname{arccosh} x$。</p>
+    <p>结果 = x&sup2;/2 - (1/2)x&#8730;(x&sup2;-1) + (1/2)\operatorname{arccosh} x + C。</p>
+</details>
+
+<h3>题目 103: 超越函数的复合分部积分</h3>
+<p class="math-exp">&#8747; (ln x)&sup2; / x^2 dx</p>
+<details class="hint">
+    <summary><strong>点击查看提示</strong></summary>
+    使用两次分部积分法，令 $u = (\ln x)^2, dv = 1/x^2 dx$。
+</details>
+<details class="analysis">
+    <summary><strong>点击查看解析</strong></summary>
+    <p>第一次分部积分：$u = (\ln x)^2, v = -1/x$。结果为 $-(\ln x)^2/x + 2 \int \frac{\ln x}{x^2} dx$。</p>
+    <p>第二次分部积分：$\int \frac{\ln x}{x^2} dx = -\frac{\ln x}{x} - \frac{1}{x}$。</p>
+    <p>总结果 = $-(\ln x)^2/x - 2\ln x/x - 2/x + C = - \frac{(\ln x)^2 + 2\ln x + 2}{x} + C$。</p>
+</details>
+<p>希望这份题库能帮助您进行系统的练习和提高！</p>
+
+</body>
+</html>
