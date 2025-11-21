@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>高数进阶不定积分40题</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        ol {
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        details {
+            margin-top: 8px;
+            background-color: #eef7ff;
+            border: 1px solid #b3d7ff;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+        summary {
+            font-weight: bold;
+            color: #0056b3;
+            cursor: pointer;
+        }
+        .solution-section {
+            margin-top: 40px;
+            border-top: 3px dashed #007bff;
+            padding-top: 20px;
+        }
+        .solution-item {
+            background-color: #fdfdfd;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        /* LaTeX / MathJax basic styling */
+        .math {
+            font-size: 1.1em;
+        }
+    </style>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+
+    <div class="container">
+        <h1>高数进阶不定积分40题 (大一期末难度)</h1>
+
+        <h2>📝 题目部分</h2>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <ol>
+            <li>
+                <span class="math">$\int x^3 \cos(2x) \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>需要连续使用三次分部积分法，注意每次 $u$ 和 $dv$ 的选择要保持一致性（例如，始终对 $x$ 的幂次求导）。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int e^{2x} \sin(3x) \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用两次分部积分法，第二次积分后会再次出现原积分项，将其移项合并即可解出。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int (\arcsin x)^2 \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>首先使用分部积分法，令 $u = (\arcsin x)^2, dv = dx$。之后可能需要再次使用分部积分或换元。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int x \arctan x \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用分部积分法，令 $u = \arctan x, dv = x \, dx$。积分后会得到一个有理函数积分。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \ln(x + \sqrt{1+x^2}) \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用分部积分法，令 $u = \ln(x + \sqrt{1+x^2}), dv = dx$。求 $du$ 时需要仔细计算导数。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \sin(\ln x) \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>类似于 $\int e^{ax}\sin(bx) \, dx$ 的求解。使用两次分部积分法，最后移项解出原积分 $I$。或者先使用换元 $t = \ln x$。</p>
+                </details>
+            </li>
+
+            <li>
+                <span class="math">$\int \sec^3 x \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>这是一个经典积分。使用分部积分法，令 $u = \sec x, dv = \sec^2 x \, dx$。过程中会用到 $\tan^2 x = \sec^2 x - 1$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \sin^4 x \cos^2 x \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>利用降幂公式：$\sin^2 \alpha = \frac{1-\cos(2\alpha)}{2}$ 和 $\cos^2 \alpha = \frac{1+\cos(2\alpha)}{2}$。或者 $\sin x \cos x = \frac{1}{2}\sin(2x)$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{\sin x + \cos x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>辅助角公式：$\sin x + \cos x = \sqrt{2} \sin(x + \frac{\pi}{4})$。然后积分 $\csc u$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{2 + \cos x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用万能代换（Weierstrass代换）：令 $t = \tan(\frac{x}{2})$。则 $\cos x = \frac{1-t^2}{1+t^2}, dx = \frac{2}{1+t^2} dt$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{\sin x}{1 + \sin x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分子加一项减一项：$\frac{\sin x}{1 + \sin x} = \frac{(1 + \sin x) - 1}{1 + \sin x} = 1 - \frac{1}{1 + \sin x}$。对于 $\frac{1}{1+\sin x}$，分子分母同乘 $(1-\sin x)$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \tan^5 x \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>拆分 $\tan^5 x = \tan^3 x \cdot \tan^2 x = \tan^3 x (\sec^2 x - 1) = \tan^3 x \sec^2 x - \tan^3 x$。对 $\tan^3 x$ 重复此操作。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \cos(3x) \cos(5x) \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用积化和差公式：$\cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{\sin^3 x \cos x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分子分母同除以 $\cos^4 x$ 转换成 $\tan x$ 和 $\sec x$，或者分子写成 $\sin^2 x + \cos^2 x$。</p>
+                </details>
+            </li>
+
+            <li>
+                <span class="math">$\int \frac{x^2}{\sqrt{9-x^2}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>根号下是 $a^2 - x^2$ 形式，令 $x = 3 \sin \theta$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{(x^2+4)^{3/2}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>根号下是 $x^2 + a^2$ 形式，令 $x = 2 \tan \theta$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{\sqrt{x^2-1}}{x^4} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>根号下是 $x^2 - a^2$ 形式，令 $x = \sec \theta$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{\sqrt{x^2+2x+5}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>先配方：$x^2+2x+5 = (x+1)^2 + 4$。然后进行三角换元或使用公式。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int x^2 \sqrt{1-x^2} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $x = \sin \theta$。积分 $\sin^2 \theta \cos^2 \theta$。</p>
+                </details>
+            </li>
+
+            <li>
+                <span class="math">$\int \frac{x^3+1}{x(x-1)^3} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>使用待定系数法拆分：$\frac{A}{x} + \frac{B}{x-1} + \frac{C}{(x-1)^2} + \frac{D}{(x-1)^3}$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x^4 - 1} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分母分解为 $(x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)$。拆分为 $\frac{A}{x-1} + \frac{B}{x+1} + \frac{Cx+D}{x^2+1}$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{x^2}{(x^2+1)^2} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>方法一：拆分为 $\frac{Ax+B}{x^2+1} + \frac{Cx+D}{(x^2+1)^2}$。方法二：令 $x = \tan \theta$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x(x^2+x+1)} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分母 $x^2+x+1$ 不可约。拆分为 $\frac{A}{x} + \frac{Bx+C}{x^2+x+1}$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x^4 + 1} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>经典难题。分母分解技巧：$x^4+1 = (x^4+2x^2+1) - 2x^2 = (x^2+1)^2 - (\sqrt{2}x)^2 = (x^2+\sqrt{2}x+1)(x^2-\sqrt{2}x+1)$。</p>
+                </details>
+            </li>
+             <li>
+                <span class="math">$\int \frac{x^5}{x^3-1} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分子次数高于分母，先进行多项式长除法。$x^5 = x^2(x^3-1) + x^2$。</p>
+                </details>
+            </li>
+            
+            <li>
+                <span class="math">$\int \frac{1}{1+\sqrt{x}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \sqrt{x}$，则 $x = u^2, dx = 2u \, du$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{\sqrt[3]{x} + \sqrt{x}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $x = u^6$，即 $u = x^{1/6}$，这是 $2$ 和 $3$ 的最小公倍数。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int e^{\sqrt{x}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \sqrt{x}$，换元后得到 $\int 2u e^u \, du$，再使用分部积分法。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x \sqrt{x-1}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \sqrt{x-1}$，则 $x = u^2+1, dx = 2u \, du$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{\ln x}{x(1+\ln^2 x)} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \ln x$，然后可能还需要一次换元。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x} \sqrt{\frac{1-x}{1+x}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \sqrt{\frac{1-x}{1+x}}$，反解出 $x$ 和 $dx$。或者令 $x = \cos \theta$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x^3} e^{-1/x^2} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = -1/x^2$。计算 $du$ 看看能否凑出 $1/x^3 \, dx$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{x \sqrt{1+\ln x}} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = 1 + \ln x$。</p>
+                </details>
+            </li>
+
+            <li>
+                <span class="math">$\int \frac{x^2-1}{x^4+1} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>分子分母同除以 $x^2$，变为 $\int \frac{1 - 1/x^2}{x^2 + 1/x^2} \, dx$。注意 $d(x + 1/x) = (1 - 1/x^2) \, dx$，且 $(x+1/x)^2 = x^2 + 2 + 1/x^2$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{x^2+1}{x^4+1} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>与上一题类似。分子分母同除以 $x^2$，变为 $\int \frac{1 + 1/x^2}{x^2 + 1/x^2} \, dx$。注意 $d(x - 1/x) = (1 + 1/x^2) \, dx$，且 $(x-1/x)^2 = x^2 - 2 + 1/x^2$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{\sin x - \cos x}{\sin x + \cos x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \sin x + \cos x$，计算 $du$。你会发现 $du$ 恰好（或差一个负号）是分子。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{x e^x}{(1+x)^2} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>将分子 $x e^x$ 拆分为 $(x+1)e^x - e^x$，然后将积分拆成两项。或者使用分部积分 $\int \frac{e^x}{1+x} dx$，选择 $u = \frac{1}{1+x}, dv = e^x dx$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \sqrt{\tan x} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>（高难）令 $u = \sqrt{\tan x}$，则 $x = \arctan(u^2), dx = \frac{2u}{1+u^4} du$。积分变为 $\int \frac{2u^2}{1+u^4} du$。再利用 (35) 和 (36) 题的技巧拆分 $\frac{2u^2}{1+u^4} = \frac{u^2+1}{u^4+1} + \frac{u^2-1}{u^4+1}$。</p>
+                </details>
+            </li>
+            <li>
+                <span class="math">$\int \frac{1}{(1+x^2)(1+(\arctan x)^2)} \, dx$</span>
+                <details>
+                    <summary>点击查看提示</summary>
+                    <p>令 $u = \arctan x$。这是一个隐藏的简单换元。</p>
+                </details>
+            </li>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+        </ol>
+
+        <div class="solution-section">
+            <h2>💡 解析部分</h2>
+<script src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+            <div class="solution-item">
+                <p><strong>1. $\int x^3 \cos(2x) \, dx$</strong></p>
+                <p><strong>解析：</strong> 连续使用分部积分法。
+                $$
+                \begin{aligned}
+                I &= \int x^3 d\left(\frac{1}{2}\sin(2x)\right) \\
+                &= \frac{1}{2}x^3 \sin(2x) - \int \frac{1}{2}\sin(2x) \cdot 3x^2 \, dx \\
+                &= \frac{1}{2}x^3 \sin(2x) - \frac{3}{2} \int x^2 \sin(2x) \, dx \\
+                &= \frac{1}{2}x^3 \sin(2x) - \frac{3}{2} \int x^2 d\left(-\frac{1}{2}\cos(2x)\right) \\
+                &= \frac{1}{2}x^3 \sin(2x) - \frac{3}{2} \left[ -\frac{1}{2}x^2 \cos(2x) - \int -\frac{1}{2}\cos(2x) \cdot 2x \, dx \right] \\
+                &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) - \frac{3}{2} \int x \cos(2x) \, dx \\
+                &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) - \frac{3}{2} \int x d\left(\frac{1}{2}\sin(2x)\right) \\
+                &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) - \frac{3}{2} \left[ \frac{1}{2}x \sin(2x) - \int \frac{1}{2}\sin(2x) \, dx \right] \\
+                &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) - \frac{3}{4}x \sin(2x) + \frac{3}{4} \int \sin(2x) \, dx \\
+                &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) - \frac{3}{4}x \sin(2x) - \frac{3}{8}\cos(2x) + C \\
+                &= \left(\frac{1}{2}x^3 - \frac{3}{4}x\right)\sin(2x) + \left(\frac{3}{4}x^2 - \frac{3}{8}\right)\cos(2x) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>2. $\int e^{2x} \sin(3x) \, dx$</strong></p>
+                <p><strong>解析：</strong> 设 $I = \int e^{2x} \sin(3x) \, dx$。
+                $$
+                \begin{aligned}
+                I &= \int \sin(3x) d\left(\frac{1}{2}e^{2x}\right) \\
+                &= \frac{1}{2}e^{2x} \sin(3x) - \int \frac{1}{2}e^{2x} \cdot 3\cos(3x) \, dx \\
+                &= \frac{1}{2}e^{2x} \sin(3x) - \frac{3}{2} \int e^{2x} \cos(3x) \, dx \\
+                &= \frac{1}{2}e^{2x} \sin(3x) - \frac{3}{2} \int \cos(3x) d\left(\frac{1}{2}e^{2x}\right) \\
+                &= \frac{1}{2}e^{2x} \sin(3x) - \frac{3}{2} \left[ \frac{1}{2}e^{2x} \cos(3x) - \int \frac{1}{2}e^{2x} \cdot (-3\sin(3x)) \, dx \right] \\
+                &= \frac{1}{2}e^{2x} \sin(3x) - \frac{3}{4}e^{2x} \cos(3x) - \frac{9}{4} \int e^{2x} \sin(3x) \, dx \\
+                I &= \frac{1}{2}e^{2x} \sin(3x) - \frac{3}{4}e^{2x} \cos(3x) - \frac{9}{4} I \\
+                I + \frac{9}{4} I &= \frac{13}{4} I = \frac{e^{2x}}{4} (2\sin(3x) - 3\cos(3x)) \\
+                I &= \frac{e^{2x}}{13} (2\sin(3x) - 3\cos(3x)) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>3. $\int (\arcsin x)^2 \, dx$</strong></p>
+                <p><strong>解析：</strong> 分部积分 $u = (\arcsin x)^2, dv = dx$。
+                $$
+                I = x (\arcsin x)^2 - \int x \cdot 2 \arcsin x \cdot \frac{1}{\sqrt{1-x^2}} \, dx = x (\arcsin x)^2 - 2 \int \frac{x \arcsin x}{\sqrt{1-x^2}} \, dx
+                $$
+                对第二个积分再次分部积分，令 $u = \arcsin x, dv = \frac{x}{\sqrt{1-x^2}} \, dx$。
+                则 $du = \frac{1}{\sqrt{1-x^2}} \, dx, v = \int \frac{x}{\sqrt{1-x^2}} \, dx = -\sqrt{1-x^2}$。
+                $$
+                \begin{aligned}
+                \int \frac{x \arcsin x}{\sqrt{1-x^2}} \, dx &= -\sqrt{1-x^2} \arcsin x - \int -\sqrt{1-x^2} \cdot \frac{1}{\sqrt{1-x^2}} \, dx \\
+                &= -\sqrt{1-x^2} \arcsin x + \int 1 \, dx = -\sqrt{1-x^2} \arcsin x + x
+                \end{aligned}
+                $$
+                代回原式：
+                $$
+                I = x (\arcsin x)^2 - 2 \left( -\sqrt{1-x^2} \arcsin x + x \right) + C = x (\arcsin x)^2 + 2\sqrt{1-x^2} \arcsin x - 2x + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>4. $\int x \arctan x \, dx$</strong></p>
+                <p><strong>解析：</strong> 分部积分 $u = \arctan x, dv = x \, dx$。$du = \frac{1}{1+x^2} \, dx, v = \frac{1}{2}x^2$。
+                $$
+                \begin{aligned}
+                I &= \frac{1}{2}x^2 \arctan x - \int \frac{1}{2}x^2 \cdot \frac{1}{1+x^2} \, dx \\
+                &= \frac{1}{2}x^2 \arctan x - \frac{1}{2} \int \frac{x^2}{1+x^2} \, dx \\
+                &= \frac{1}{2}x^2 \arctan x - \frac{1}{2} \int \frac{(x^2+1) - 1}{1+x^2} \, dx \\
+                &= \frac{1}{2}x^2 \arctan x - \frac{1}{2} \int \left( 1 - \frac{1}{1+x^2} \right) \, dx \\
+                &= \frac{1}{2}x^2 \arctan x - \frac{1}{2} (x - \arctan x) + C \\
+                &= \frac{1}{2}(x^2+1)\arctan x - \frac{1}{2}x + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>5. $\int \ln(x + \sqrt{1+x^2}) \, dx$</strong></p>
+                <p><strong>解析：</strong> 分部积分 $u = \ln(x + \sqrt{1+x^2}), dv = dx$。
+                $$
+                du = \frac{1}{x + \sqrt{1+x^2}} \cdot \left( 1 + \frac{1}{2\sqrt{1+x^2}} \cdot 2x \right) \, dx = \frac{1}{x + \sqrt{1+x^2}} \cdot \left( 1 + \frac{x}{\sqrt{1+x^2}} \right) \, dx
+                $$
+                $$
+                du = \frac{1}{x + \sqrt{1+x^2}} \cdot \left( \frac{\sqrt{1+x^2} + x}{\sqrt{1+x^2}} \right) \, dx = \frac{1}{\sqrt{1+x^2}} \, dx
+                $$
+                (注: $\text{arsinh}(x) = \ln(x + \sqrt{1+x^2})$, 它的导数是 $\frac{1}{\sqrt{1+x^2}}$)
+                $$
+                \begin{aligned}
+                I &= x \ln(x + \sqrt{1+x^2}) - \int x \cdot \frac{1}{\sqrt{1+x^2}} \, dx \\
+                &= x \ln(x + \sqrt{1+x^2}) - \int \frac{x}{\sqrt{1+x^2}} \, dx \\
+                \text{令 } w = 1+x^2, dw = 2x \, dx \\
+                &= x \ln(x + \sqrt{1+x^2}) - \int \frac{1/2}{\sqrt{w}} \, dw \\
+                &= x \ln(x + \sqrt{1+x^2}) - \sqrt{w} + C \\
+                &= x \ln(x + \sqrt{1+x^2}) - \sqrt{1+x^2} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>6. $\int \sin(\ln x) \, dx$</strong></p>
+                <p><strong>解析：</strong> 方法一：换元。令 $t = \ln x$，则 $x = e^t, dx = e^t \, dt$。
+                $I = \int \sin(t) e^t \, dt$。
+                这回到了第2题的类型。设 $J = \int e^t \sin(t) \, dt$。
+                $J = e^t \sin(t) - \int e^t \cos(t) \, dt = e^t \sin(t) - (e^t \cos(t) - \int e^t (-\sin t) \, dt)$
+                $J = e^t \sin(t) - e^t \cos(t) - J$
+                $2J = e^t (\sin t - \cos t) \implies J = \frac{e^t}{2} (\sin t - \cos t) + C$
+                代回 $x$：
+                $I = \frac{x}{2} (\sin(\ln x) - \cos(\ln x)) + C$
+                
+                方法二：直接分部积分。
+                $I = x \sin(\ln x) - \int x \cdot \cos(\ln x) \cdot \frac{1}{x} \, dx = x \sin(\ln x) - \int \cos(\ln x) \, dx$
+                $I = x \sin(\ln x) - \left[ x \cos(\ln x) - \int x \cdot (-\sin(\ln x)) \cdot \frac{1}{x} \, dx \right]$
+                $I = x \sin(\ln x) - x \cos(\ln x) - \int \sin(\ln x) \, dx = x \sin(\ln x) - x \cos(\ln x) - I$
+                $2I = x (\sin(\ln x) - \cos(\ln x)) \implies I = \frac{x}{2} (\sin(\ln x) - \cos(\ln x)) + C$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>7. $\int \sec^3 x \, dx$</strong></p>
+                <p><strong>解析：</strong> 设 $I = \int \sec^3 x \, dx = \int \sec x \cdot \sec^2 x \, dx$。
+                令 $u = \sec x, dv = \sec^2 x \, dx$。则 $du = \sec x \tan x \, dx, v = \tan x$。
+                $$
+                \begin{aligned}
+                I &= \sec x \tan x - \int \tan x \cdot (\sec x \tan x) \, dx \\
+                &= \sec x \tan x - \int \sec x \tan^2 x \, dx \\
+                &= \sec x \tan x - \int \sec x (\sec^2 x - 1) \, dx \\
+                &= \sec x \tan x - \int \sec^3 x \, dx + \int \sec x \, dx \\
+                I &= \sec x \tan x - I + \ln|\sec x + \tan x| \\
+                2I &= \sec x \tan x + \ln|\sec x + \tan x| \\
+                I &= \frac{1}{2} (\sec x \tan x + \ln|\sec x + \tan x|) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>8. $\int \sin^4 x \cos^2 x \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int (\sin x \cos x)^2 \sin^2 x \, dx \\
+                &= \int \left(\frac{1}{2}\sin(2x)\right)^2 \left(\frac{1-\cos(2x)}{2}\right) \, dx \\
+                &= \frac{1}{8} \int \sin^2(2x) (1-\cos(2x)) \, dx \\
+                &= \frac{1}{8} \int \left( \frac{1-\cos(4x)}{2} \right) (1-\cos(2x)) \, dx \\
+                &= \frac{1}{16} \int (1 - \cos(2x) - \cos(4x) + \cos(2x)\cos(4x)) \, dx \\
+                \text{使用积化和差 } \cos(2x)\cos(4x) = \frac{1}{2}(\cos(6x) + \cos(2x)) \\
+                &= \frac{1}{16} \int \left( 1 - \cos(2x) - \cos(4x) + \frac{1}{2}\cos(6x) + \frac{1}{2}\cos(2x) \right) \, dx \\
+                &= \frac{1}{16} \int \left( 1 - \frac{1}{2}\cos(2x) - \cos(4x) + \frac{1}{2}\cos(6x) \right) \, dx \\
+                &= \frac{1}{16} \left( x - \frac{1}{4}\sin(2x) - \frac{1}{4}\sin(4x) + \frac{1}{12}\sin(6x) \right) + C \\
+                &= \frac{x}{16} - \frac{\sin(2x)}{64} - \frac{\sin(4x)}{64} + \frac{\sin(6x)}{192} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>9. $\int \frac{1}{\sin x + \cos x} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                I = \int \frac{1}{\sqrt{2} \left( \frac{1}{\sqrt{2}}\sin x + \frac{1}{\sqrt{2}}\cos x \right)} \, dx = \frac{1}{\sqrt{2}} \int \frac{1}{\sin(x + \frac{\pi}{4})} \, dx
+                $$
+                $$
+                I = \frac{1}{\sqrt{2}} \int \csc\left(x + \frac{\pi}{4}\right) \, dx
+                $$
+                令 $u = x + \frac{\pi}{4}$, $du = dx$。
+                $$
+                I = \frac{1}{\sqrt{2}} \int \csc u \, du = \frac{1}{\sqrt{2}} \ln|\csc u - \cot u| + C = \frac{1}{\sqrt{2}} \ln\left|\csc\left(x + \frac{\pi}{4}\right) - \cot\left(x + \frac{\pi}{4}\right)\right| + C
+                $$
+                (或 $\frac{1}{\sqrt{2}} \ln|\tan(\frac{u}{2})| + C = \frac{1}{\sqrt{2}} \ln\left|\tan\left(\frac{x}{2} + \frac{\pi}{8}\right)\right| + C$ )
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>10. $\int \frac{1}{2 + \cos x} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $t = \tan(\frac{x}{2})$。则 $\cos x = \frac{1-t^2}{1+t^2}, dx = \frac{2}{1+t^2} dt$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{2 + \frac{1-t^2}{1+t^2}} \cdot \frac{2}{1+t^2} \, dt \\
+                &= \int \frac{1}{\frac{2(1+t^2) + (1-t^2)}{1+t^2}} \cdot \frac{2}{1+t^2} \, dt \\
+                &= \int \frac{1+t^2}{2+2t^2+1-t^2} \cdot \frac{2}{1+t^2} \, dt \\
+                &= \int \frac{2}{3+t^2} \, dt \\
+                &= 2 \int \frac{1}{(\sqrt{3})^2 + t^2} \, dt \\
+                &= 2 \cdot \frac{1}{\sqrt{3}} \arctan\left(\frac{t}{\sqrt{3}}\right) + C \\
+                &= \frac{2}{\sqrt{3}} \arctan\left(\frac{\tan(x/2)}{\sqrt{3}}\right) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>11. $\int \frac{\sin x}{1 + \sin x} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int \frac{(1 + \sin x) - 1}{1 + \sin x} \, dx = \int \left( 1 - \frac{1}{1 + \sin x} \right) \, dx \\
+                &= x - \int \frac{1}{1 + \sin x} \, dx \\
+                &= x - \int \frac{1 - \sin x}{(1 + \sin x)(1 - \sin x)} \, dx \\
+                &= x - \int \frac{1 - \sin x}{1 - \sin^2 x} \, dx \\
+                &= x - \int \frac{1 - \sin x}{\cos^2 x} \, dx \\
+                &= x - \int \left( \frac{1}{\cos^2 x} - \frac{\sin x}{\cos^2 x} \right) \, dx \\
+                &= x - \int (\sec^2 x - \sec x \tan x) \, dx \\
+                &= x - (\tan x - \sec x) + C = x - \tan x + \sec x + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>12. $\int \tan^5 x \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int \tan^3 x (\tan^2 x) \, dx = \int \tan^3 x (\sec^2 x - 1) \, dx \\
+                &= \int \tan^3 x \sec^2 x \, dx - \int \tan^3 x \, dx \\
+                &= \int \tan^3 x \, d(\tan x) - \int \tan x (\sec^2 x - 1) \, dx \\
+                &= \frac{1}{4}\tan^4 x - \left( \int \tan x \sec^2 x \, dx - \int \tan x \, dx \right) \\
+                &= \frac{1}{4}\tan^4 x - \int \tan x \, d(\tan x) + \int \tan x \, dx \\
+                &= \frac{1}{4}\tan^4 x - \frac{1}{2}\tan^2 x - \ln|\cos x| + C \quad (\text{或} + \ln|\sec x| + C)
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>13. $\int \cos(3x) \cos(5x) \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{2} [\cos(3x+5x) + \cos(5x-3x)] \, dx \\
+                &= \frac{1}{2} \int (\cos(8x) + \cos(2x)) \, dx \\
+                &= \frac{1}{2} \left( \frac{1}{8}\sin(8x) + \frac{1}{2}\sin(2x) \right) + C \\
+                &= \frac{1}{16}\sin(8x) + \frac{1}{4}\sin(2x) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>14. $\int \frac{1}{\sin^3 x \cos x} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int \frac{\sin^2 x + \cos^2 x}{\sin^3 x \cos x} \, dx \\
+                &= \int \left( \frac{1}{\sin x \cos x} + \frac{\cos x}{\sin^3 x} \right) \, dx \\
+                &= \int \frac{1}{\tan x \cos^2 x} \, dx + \int \frac{\cot x}{\sin^2 x} \, dx \\
+                &= \int \frac{\sec^2 x}{\tan x} \, dx + \int \cot x \csc^2 x \, dx \\
+                &= \int \frac{d(\tan x)}{\tan x} - \int \cot x \, d(\cot x) \\
+                &= \ln|\tan x| - \frac{1}{2}\cot^2 x + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>15. $\int \frac{x^2}{\sqrt{9-x^2}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $x = 3 \sin \theta, dx = 3 \cos \theta \, d\theta$。$\sqrt{9-x^2} = \sqrt{9-9\sin^2 \theta} = 3\cos \theta$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{(3\sin \theta)^2}{3\cos \theta} \cdot 3 \cos \theta \, d\theta \\
+                &= \int 9 \sin^2 \theta \, d\theta \\
+                &= 9 \int \frac{1-\cos(2\theta)}{2} \, d\theta \\
+                &= \frac{9}{2} \left( \theta - \frac{1}{2}\sin(2\theta) \right) + C \\
+                &= \frac{9}{2} (\theta - \sin \theta \cos \theta) + C \\
+                \text{由 } x = 3 \sin \theta \implies \theta = \arcsin(x/3), \cos \theta = \sqrt{1-\sin^2 \theta} = \sqrt{1-(x/3)^2} = \frac{\sqrt{9-x^2}}{3} \\
+                &= \frac{9}{2} \left( \arcsin\left(\frac{x}{3}\right) - \frac{x}{3} \cdot \frac{\sqrt{9-x^2}}{3} \right) + C \\
+                &= \frac{9}{2} \arcsin\left(\frac{x}{3}\right) - \frac{x\sqrt{9-x^2}}{2} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>16. $\int \frac{1}{(x^2+4)^{3/2}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $x = 2 \tan \theta, dx = 2 \sec^2 \theta \, d\theta$。$(x^2+4)^{3/2} = (4\tan^2 \theta + 4)^{3/2} = (4\sec^2 \theta)^{3/2} = 8\sec^3 \theta$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{8\sec^3 \theta} \cdot 2 \sec^2 \theta \, d\theta \\
+                &= \frac{1}{4} \int \frac{1}{\sec \theta} \, d\theta = \frac{1}{4} \int \cos \theta \, d\theta \\
+                &= \frac{1}{4} \sin \theta + C \\
+                \text{由 } x = 2 \tan \theta \implies \tan \theta = x/2 \text{ (对边=x, 邻边=2, 斜边=}\sqrt{x^2+4}\text{)} \\
+                \sin \theta = \frac{x}{\sqrt{x^2+4}} \\
+                &= \frac{1}{4} \frac{x}{\sqrt{x^2+4}} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>17. $\int \frac{\sqrt{x^2-1}}{x^4} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $x = \sec \theta, dx = \sec \theta \tan \theta \, d\theta$。$\sqrt{x^2-1} = \sqrt{\sec^2 \theta - 1} = \tan \theta$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{\tan \theta}{(\sec \theta)^4} \cdot \sec \theta \tan \theta \, d\theta \\
+                &= \int \frac{\tan^2 \theta}{\sec^3 \theta} \, d\theta \\
+                &= \int \frac{\sin^2 \theta / \cos^2 \theta}{1 / \cos^3 \theta} \, d\theta \\
+                &= \int \sin^2 \theta \cos \theta \, d\theta \\
+                &= \int \sin^2 \theta \, d(\sin \theta) \\
+                &= \frac{1}{3} \sin^3 \theta + C \\
+                \text{由 } x = \sec \theta = 1/\cos \theta \implies \cos \theta = 1/x \text{ (斜边=x, 邻边=1, 对边=}\sqrt{x^2-1}\text{)} \\
+                \sin \theta = \frac{\sqrt{x^2-1}}{x} \\
+                &= \frac{1}{3} \left( \frac{\sqrt{x^2-1}}{x} \right)^3 + C = \frac{(x^2-1)^{3/2}}{3x^3} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>18. $\int \frac{1}{\sqrt{x^2+2x+5}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 配方：$x^2+2x+5 = (x^2+2x+1) + 4 = (x+1)^2 + 4$。
+                $$
+                I = \int \frac{1}{\sqrt{(x+1)^2 + 4}} \, dx
+                $$
+                令 $u = x+1, du = dx$。
+                $$
+                I = \int \frac{1}{\sqrt{u^2 + 4}} \, du
+                $$
+                这是 $\text{arsinh}$ 的标准形式。
+                $$
+                I = \ln|u + \sqrt{u^2+4}| + C = \ln|x+1 + \sqrt{(x+1)^2+4}| + C = \ln|x+1 + \sqrt{x^2+2x+5}| + C
+                $$
+                (如果使用三角换元 $u = 2 \tan \theta$，会得到 $\int \sec \theta \, d\theta = \ln|\sec \theta + \tan \theta| + C$，代回也能得到相同结果。)
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>19. $\int x^2 \sqrt{1-x^2} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $x = \sin \theta, dx = \cos \theta \, d\theta$。$\sqrt{1-x^2} = \cos \theta$。
+                $$
+                \begin{aligned}
+                I &= \int \sin^2 \theta \cdot \cos \theta \cdot \cos \theta \, d\theta = \int \sin^2 \theta \cos^2 \theta \, d\theta \\
+                &= \int (\sin \theta \cos \theta)^2 \, d\theta = \int \left(\frac{1}{2}\sin(2\theta)\right)^2 \, d\theta \\
+                &= \frac{1}{4} \int \sin^2(2\theta) \, d\theta \\
+                &= \frac{1}{4} \int \frac{1-\cos(4\theta)}{2} \, d\theta \\
+                &= \frac{1}{8} \left( \theta - \frac{1}{4}\sin(4\theta) \right) + C \\
+                &= \frac{1}{8} \left( \theta - \frac{1}{4} \cdot 2 \sin(2\theta) \cos(2\theta) \right) + C \\
+                &= \frac{1}{8} \left( \theta - \sin\theta \cos\theta (\cos^2\theta - \sin^2\theta) \right) + C \\
+                \text{由 } x = \sin \theta, \cos \theta = \sqrt{1-x^2}, \theta = \arcsin x \\
+                &= \frac{1}{8} \left( \arcsin x - x \sqrt{1-x^2} (1-x^2 - x^2) \right) + C \\
+                &= \frac{1}{8} \arcsin x - \frac{1}{8} x \sqrt{1-x^2} (1-2x^2) + C
+                \end{aligned}
+                $$
+                (注： $\frac{1}{8}(\theta - \frac{1}{2}\sin(2\theta)\cos(2\theta))$ 这一步代入 $\sin(2\theta) = 2\sin\theta\cos\theta$ 和 $\cos(2\theta) = 1-2\sin^2\theta$ 更简单)
+                $I = \frac{1}{8}(\theta - \sin\theta\cos\theta(1-2\sin^2\theta)) + C = \frac{1}{8}(\arcsin x - x\sqrt{1-x^2}(1-2x^2)) + C$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>20. $\int \frac{x^3+1}{x(x-1)^3} \, dx$</strong></p>
+                <p><strong>解析：</strong> 设 $\frac{x^3+1}{x(x-1)^3} = \frac{A}{x} + \frac{B}{x-1} + \frac{C}{(x-1)^2} + \frac{D}{(x-1)^3}$。
+                通分：$x^3+1 = A(x-1)^3 + Bx(x-1)^2 + Cx(x-1) + Dx$
+                令 $x=0 \implies 1 = A(-1)^3 \implies A = -1$
+                令 $x=1 \implies 1+1 = D(1) \implies D = 2$
+                比较 $x^3$ 系数：$1 = A + B \implies 1 = -1 + B \implies B = 2$
+                比较 $x^2$ 系数：$0 = A(-3) + B(-2) + C \implies 0 = (-1)(-3) + (2)(-2) + C \implies 0 = 3 - 4 + C \implies C = 1$
+                $$
+                \begin{aligned}
+                I &= \int \left( -\frac{1}{x} + \frac{2}{x-1} + \frac{1}{(x-1)^2} + \frac{2}{(x-1)^3} \right) \, dx \\
+                &= -\ln|x| + 2\ln|x-1| - \frac{1}{x-1} - \frac{1}{(x-1)^2} + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>21. $\int \frac{1}{x^4 - 1} \, dx$</strong></p>
+                <p><strong>解析：</strong> $\frac{1}{x^4 - 1} = \frac{1}{(x-1)(x+1)(x^2+1)} = \frac{A}{x-1} + \frac{B}{x+1} + \frac{Cx+D}{x^2+1}$
+                通分 $1 = A(x+1)(x^2+1) + B(x-1)(x^2+1) + (Cx+D)(x-1)(x+1)$
+                令 $x=1 \implies 1 = A(2)(2) \implies A = 1/4$
+                令 $x=-1 \implies 1 = B(-2)(2) \implies B = -1/4$
+                令 $x=0 \implies 1 = A(1)(1) + B(-1)(1) + D(-1)(1) = A - B - D \implies 1 = 1/4 - (-1/4) - D \implies 1 = 1/2 - D \implies D = -1/2$
+                比较 $x^3$ 系数：$0 = A + B + C \implies 0 = 1/4 - 1/4 + C \implies C = 0$
+                $$
+                \begin{aligned}
+                I &= \int \left( \frac{1/4}{x-1} - \frac{1/4}{x+1} - \frac{1/2}{x^2+1} \right) \, dx \\
+                &= \frac{1}{4}\ln|x-1| - \frac{1}{4}\ln|x+1| - \frac{1}{2}\arctan x + C \\
+                &= \frac{1}{4}\ln\left|\frac{x-1}{x+1}\right| - \frac{1}{2}\arctan x + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>22. $\int \frac{x^2}{(x^2+1)^2} \, dx$</strong></p>
+                <p><strong>解析：</strong> 方法一：三角换元。令 $x = \tan \theta, dx = \sec^2 \theta \, d\theta$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{\tan^2 \theta}{(\tan^2 \theta+1)^2} \cdot \sec^2 \theta \, d\theta = \int \frac{\tan^2 \theta}{(\sec^2 \theta)^2} \cdot \sec^2 \theta \, d\theta \\
+                &= \int \frac{\tan^2 \theta}{\sec^2 \theta} \, d\theta = \int \sin^2 \theta \, d\theta \\
+                &= \int \frac{1-\cos(2\theta)}{2} \, d\theta = \frac{1}{2}\left(\theta - \frac{1}{2}\sin(2\theta)\right) + C = \frac{1}{2}(\theta - \sin\theta \cos\theta) + C \\
+                \text{由 } \tan \theta = x \implies \theta = \arctan x, \sin \theta = \frac{x}{\sqrt{1+x^2}}, \cos \theta = \frac{1}{\sqrt{1+x^2}} \\
+                &= \frac{1}{2}\left(\arctan x - \frac{x}{\sqrt{1+x^2}} \cdot \frac{1}{\sqrt{1+x^2}}\right) + C = \frac{1}{2}\arctan x - \frac{x}{2(1+x^2)} + C
+                \end{aligned}
+                $$
+                方法二：分部积分 $\int x \cdot \frac{x}{(x^2+1)^2} \, dx$。
+                令 $u = x, dv = \frac{x}{(x^2+1)^2} \, dx$。 $v = \int \frac{x}{(x^2+1)^2} \, dx = -\frac{1}{2(x^2+1)}$。
+                $I = -\frac{x}{2(x^2+1)} - \int -\frac{1}{2(x^2+1)} \, dx = -\frac{x}{2(x^2+1)} + \frac{1}{2}\arctan x + C$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>23. $\int \frac{1}{x(x^2+x+1)} \, dx$</strong></p>
+                <p><strong>解析：</strong> 设 $\frac{1}{x(x^2+x+1)} = \frac{A}{x} + \frac{Bx+C}{x^2+x+1}$
+                $1 = A(x^2+x+1) + (Bx+C)x$
+                令 $x=0 \implies 1 = A(1) \implies A = 1$
+                比较 $x^2$ 系数：$0 = A + B \implies 0 = 1 + B \implies B = -1$
+                比较 $x$ 系数：$0 = A + C \implies 0 = 1 + C \implies C = -1$
+                $$
+                \begin{aligned}
+                I &= \int \left( \frac{1}{x} - \frac{x+1}{x^2+x+1} \right) \, dx \\
+                &= \ln|x| - \int \frac{x+1}{x^2+x+1} \, dx \\
+                \text{处理第二项：} \int \frac{x+1}{(x+1/2)^2 + 3/4} \, dx \text{。令 } u = x+1/2, x = u-1/2 \\
+                &= \int \frac{(u-1/2)+1}{u^2 + 3/4} \, du = \int \frac{u+1/2}{u^2 + 3/4} \, du \\
+                &= \int \frac{u}{u^2 + 3/4} \, du + \int \frac{1/2}{u^2 + (\sqrt{3}/2)^2} \, du \\
+                &= \frac{1}{2}\ln|u^2+3/4| + \frac{1}{2} \cdot \frac{1}{\sqrt{3}/2} \arctan\left(\frac{u}{\sqrt{3}/2}\right) \\
+                &= \frac{1}{2}\ln|x^2+x+1| + \frac{1}{\sqrt{3}} \arctan\left(\frac{2x+1}{\sqrt{3}}\right) \\
+                I &= \ln|x| - \frac{1}{2}\ln|x^2+x+1| - \frac{1}{\sqrt{3}} \arctan\left(\frac{2x+1}{\sqrt{3}}\right) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>24. $\int \frac{1}{x^4 + 1} \, dx$</strong></p>
+                <p><strong>解析：</strong> $x^4+1 = (x^2+1)^2 - 2x^2 = (x^2+\sqrt{2}x+1)(x^2-\sqrt{2}x+1)$。
+                设 $\frac{1}{x^4+1} = \frac{Ax+B}{x^2+\sqrt{2}x+1} + \frac{Cx+D}{x^2-\sqrt{2}x+1}$
+                通分后比较系数可得：
+                $A = \frac{1}{2\sqrt{2}}, B = \frac{1}{2}, C = -\frac{1}{2\sqrt{2}}, D = \frac{1}{2}$
+                $$
+                I = \int \frac{\frac{1}{2\sqrt{2}}x + \frac{1}{2}}{x^2+\sqrt{2}x+1} \, dx + \int \frac{-\frac{1}{2\sqrt{2}}x + \frac{1}{2}}{x^2-\sqrt{2}x+1} \, dx
+                $$
+                $$
+                I = \frac{1}{4\sqrt{2}} \int \frac{2x+2\sqrt{2}}{x^2+\sqrt{2}x+1} \, dx - \frac{1}{4\sqrt{2}} \int \frac{2x-2\sqrt{2}}{x^2-\sqrt{2}x+1} \, dx
+                $$
+                $$
+                I = \frac{1}{4\sqrt{2}} \int \frac{2x+\sqrt{2}}{x^2+\sqrt{2}x+1} \, dx + \frac{1}{4} \int \frac{1}{(x+\frac{\sqrt{2}}{2})^2 + \frac{1}{2}} \, dx \\
+                - \frac{1}{4\sqrt{2}} \int \frac{2x-\sqrt{2}}{x^2-\sqrt{2}x+1} \, dx + \frac{1}{4} \int \frac{1}{(x-\frac{\sqrt{2}}{2})^2 + \frac{1}{2}} \, dx
+                $$
+                $$
+                I = \frac{1}{4\sqrt{2}} \ln|x^2+\sqrt{2}x+1| + \frac{1}{4} \cdot \sqrt{2} \arctan(\sqrt{2}x+1) \\
+                - \frac{1}{4\sqrt{2}} \ln|x^2-\sqrt{2}x+1| + \frac{1}{4} \cdot \sqrt{2} \arctan(\sqrt{2}x-1) + C
+                $$
+                $$
+                I = \frac{1}{4\sqrt{2}} \ln\left|\frac{x^2+\sqrt{2}x+1}{x^2-\sqrt{2}x+1}\right| + \frac{\sqrt{2}}{4} (\arctan(\sqrt{2}x+1) + \arctan(\sqrt{2}x-1)) + C
+                $$
+                (注：此题的(35)和(36)是更简单的解法)
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>25. $\int \frac{x^5}{x^3-1} \, dx$</strong></p>
+                <p><strong>解析：</strong> 长除法：$x^5 = x^2(x^3-1) + x^2$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{x^2(x^3-1) + x^2}{x^3-1} \, dx = \int \left( x^2 + \frac{x^2}{x^3-1} \right) \, dx \\
+                &= \frac{1}{3}x^3 + \int \frac{x^2}{x^3-1} \, dx \\
+                \text{令 } u = x^3-1, du = 3x^2 \, dx \\
+                &= \frac{1}{3}x^3 + \int \frac{1/3}{u} \, du \\
+                &= \frac{1}{3}x^3 + \frac{1}{3}\ln|u| + C \\
+                &= \frac{1}{3}x^3 + \frac{1}{3}\ln|x^3-1| + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>26. $\int \frac{1}{1+\sqrt{x}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sqrt{x}$，则 $x = u^2, dx = 2u \, du$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{1+u} \cdot 2u \, du = 2 \int \frac{u}{1+u} \, du \\
+                &= 2 \int \frac{(u+1)-1}{1+u} \, du = 2 \int \left( 1 - \frac{1}{1+u} \right) \, du \\
+                &= 2 (u - \ln|1+u|) + C \\
+                &= 2 (\sqrt{x} - \ln(1+\sqrt{x})) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>27. $\int \frac{1}{\sqrt[3]{x} + \sqrt{x}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $x = u^6, dx = 6u^5 \, du$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{\sqrt[3]{u^6} + \sqrt{u^6}} \cdot 6u^5 \, du = \int \frac{6u^5}{u^2 + u^3} \, du \\
+                &= \int \frac{6u^5}{u^2(1+u)} \, du = 6 \int \frac{u^3}{1+u} \, du \\
+                \text{多项式长除法: } u^3 = (u^2-u+1)(u+1) - 1 \\
+                &= 6 \int \left( u^2 - u + 1 - \frac{1}{1+u} \right) \, du \\
+                &= 6 \left( \frac{1}{3}u^3 - \frac{1}{2}u^2 + u - \ln|1+u| \right) + C \\
+                \text{代回 } u = x^{1/6} \\
+                &= 2(x^{1/6})^3 - 3(x^{1/6})^2 + 6(x^{1/6}) - 6\ln|1+x^{1/6}| + C \\
+                &= 2\sqrt{x} - 3\sqrt[3]{x} + 6\sqrt[6]{x} - 6\ln(1+\sqrt[6]{x}) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>28. $\int e^{\sqrt{x}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sqrt{x}, x = u^2, dx = 2u \, du$。
+                $$
+                I = \int e^u \cdot 2u \, du = 2 \int u e^u \, du
+                $$
+                分部积分：令 $w = u, dv = e^u \, du$。$dw = du, v = e^u$。
+                $$
+                I = 2 \left( u e^u - \int e^u \, du \right) = 2(u e^u - e^u) + C \\
+                &= 2e^u (u-1) + C \\
+                &= 2e^{\sqrt{x}} (\sqrt{x}-1) + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>29. $\int \frac{1}{x \sqrt{x-1}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sqrt{x-1}, u^2 = x-1 \implies x = u^2+1, dx = 2u \, du$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{(u^2+1) \cdot u} \cdot 2u \, du \\
+                &= \int \frac{2}{u^2+1} \, du \\
+                &= 2 \arctan u + C \\
+                &= 2 \arctan(\sqrt{x-1}) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>30. $\int \frac{\ln x}{x(1+\ln^2 x)} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \ln x, du = \frac{1}{x} \, dx$。
+                $$
+                I = \int \frac{u}{1+u^2} \, du
+                $$
+                再令 $w = 1+u^2, dw = 2u \, du$。
+                $$
+                I = \int \frac{1/2}{w} \, dw = \frac{1}{2}\ln|w| + C = \frac{1}{2}\ln(1+u^2) + C \\
+                &= \frac{1}{2}\ln(1+(\ln x)^2) + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>31. $\int \frac{1}{x} \sqrt{\frac{1-x}{1+x}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sqrt{\frac{1-x}{1+x}}$。
+                $u^2 = \frac{1-x}{1+x} \implies u^2(1+x) = 1-x \implies u^2+u^2x = 1-x \implies x(u^2+1) = 1-u^2 \implies x = \frac{1-u^2}{1+u^2}$
+                $dx = \frac{-2u(1+u^2) - (1-u^2)(2u)}{(1+u^2)^2} \, du = \frac{-2u-2u^3-2u+2u^3}{(1+u^2)^2} \, du = \frac{-4u}{(1+u^2)^2} \, du$
+                $$
+                \begin{aligned}
+                I &= \int \frac{1+u^2}{1-u^2} \cdot u \cdot \frac{-4u}{(1+u^2)^2} \, du \\
+                &= \int \frac{-4u^2}{(1-u^2)(1+u^2)} \, du = \int \frac{-4u^2}{(1-u)(1+u)(1+u^2)} \, du
+                \end{aligned}
+                $$
+                ... (这个拆分很复杂) ...
+                
+                方法二：令 $x = \cos \theta, dx = -\sin \theta \, d\theta$
+                $\sqrt{\frac{1-\cos \theta}{1+\cos \theta}} = \sqrt{\frac{2\sin^2(\theta/2)}{2\cos^2(\theta/2)}} = \tan(\theta/2)$
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{\cos \theta} \cdot \tan(\theta/2) \cdot (-\sin \theta) \, d\theta \\
+                &= \int \frac{-\sin \theta \tan(\theta/2)}{\cos \theta} \, d\theta = \int \frac{-2\sin(\theta/2)\cos(\theta/2)\tan(\theta/2)}{1-2\sin^2(\theta/2)} \, d\theta \\
+                &= \int \frac{-2\sin^2(\theta/2)}{1-2\sin^2(\theta/2)} \, d\theta \\
+                \text{令 } t = \tan(\theta/2) \dots \text{ (这回到了万能代换) } \\
+                \text{回到 } \int \frac{-2\sin^2(\theta/2)}{1-2\sin^2(\theta/2)} d\theta \text{, 令 } v = \theta/2, dv = d\theta/2 \\
+                &= \int \frac{-4\sin^2 v}{1-2\sin^2 v} dv = \int \frac{-4\sin^2 v}{\cos(2v)} dv = \int \frac{-2(1-\cos(2v))}{\cos(2v)} dv \\
+                &= \int (-2\sec(2v) + 2) dv = - \ln|\sec(2v)+\tan(2v)| + 2v + C \\
+                &= -\ln|\sec \theta + \tan \theta| + \theta + C = -\ln\left|\frac{1}{x} + \frac{\sqrt{1-x^2}}{x}\right| + \arccos x + C \\
+                &= \ln\left|\frac{x}{1+\sqrt{1-x^2}}\right| + \arccos x + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>32. $\int \frac{1}{x^3} e^{-1/x^2} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = -1/x^2 = -x^{-2}$。
+                $du = -(-2)x^{-3} \, dx = \frac{2}{x^3} \, dx$。
+                所以 $\frac{1}{x^3} \, dx = \frac{1}{2} \, du$。
+                $$
+                I = \int e^u \cdot \frac{1}{2} \, du = \frac{1}{2} \int e^u \, du = \frac{1}{2}e^u + C = \frac{1}{2}e^{-1/x^2} + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>33. $\int \frac{1}{x \sqrt{1+\ln x}} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = 1 + \ln x$。
+                $du = \frac{1}{x} \, dx$。
+                $$
+                I = \int \frac{1}{\sqrt{u}} \, du = \int u^{-1/2} \, du = 2 u^{1/2} + C = 2\sqrt{1+\ln x} + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>34. $\int \frac{x^2-1}{x^4+1} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                I = \int \frac{1 - 1/x^2}{x^2 + 1/x^2} \, dx
+                $$
+                令 $u = x + 1/x$。则 $du = (1 - 1/x^2) \, dx$。
+                分母 $x^2 + 1/x^2 = (x^2 + 2 + 1/x^2) - 2 = (x+1/x)^2 - 2 = u^2 - 2$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{u^2 - 2} \, du = \int \frac{1}{u^2 - (\sqrt{2})^2} \, du \\
+                &= \frac{1}{2\sqrt{2}} \ln\left|\frac{u-\sqrt{2}}{u+\sqrt{2}}\right| + C \\
+                &= \frac{1}{2\sqrt{2}} \ln\left|\frac{x + 1/x - \sqrt{2}}{x + 1/x + \sqrt{2}}\right| + C \\
+                &= \frac{1}{2\sqrt{2}} \ln\left|\frac{x^2 - \sqrt{2}x + 1}{x^2 + \sqrt{2}x + 1}\right| + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>35. $\int \frac{x^2+1}{x^4+1} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                I = \int \frac{1 + 1/x^2}{x^2 + 1/x^2} \, dx
+                $$
+                令 $u = x - 1/x$。则 $du = (1 + 1/x^2) \, dx$。
+                分母 $x^2 + 1/x^2 = (x^2 - 2 + 1/x^2) + 2 = (x-1/x)^2 + 2 = u^2 + 2$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{u^2 + 2} \, du = \int \frac{1}{u^2 + (\sqrt{2})^2} \, du \\
+                &= \frac{1}{\sqrt{2}} \arctan\left(\frac{u}{\sqrt{2}}\right) + C \\
+                &= \frac{1}{\sqrt{2}} \arctan\left(\frac{x - 1/x}{\sqrt{2}}\right) + C \\
+                &= \frac{1}{\sqrt{2}} \arctan\left(\frac{x^2 - 1}{\sqrt{2}x}\right) + C
+                \end{aligned}
+                $$
+                (注：第24题 $\int \frac{1}{x^4+1} dx = \frac{1}{2} \int \frac{(x^2+1)+(1-x^2)}{x^4+1} dx$ 即可拆分为本题与上一题之和/差)
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>36. $\int \frac{\sin x - \cos x}{\sin x + \cos x} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sin x + \cos x$。
+                $du = (\cos x - \sin x) \, dx = -(\sin x - \cos x) \, dx$。
+                所以 $(\sin x - \cos x) \, dx = -du$。
+                $$
+                I = \int \frac{-1}{u} \, du = -\ln|u| + C = -\ln|\sin x + \cos x| + C
+                $$
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>37. $\int \frac{x e^x}{(1+x)^2} \, dx$</strong></p>
+                <p><strong>解析：</strong>
+                $$
+                \begin{aligned}
+                I &= \int \frac{(x+1) - 1}{(1+x)^2} e^x \, dx \\
+                &= \int \left( \frac{1}{1+x} - \frac{1}{(1+x)^2} \right) e^x \, dx \\
+                &= \int \frac{e^x}{1+x} \, dx - \int \frac{e^x}{(1+x)^2} \, dx \\
+                \text{对第一项分部积分：} \text{令 } u = \frac{1}{1+x}, dv = e^x \, dx \\
+                du = -\frac{1}{(1+x)^2} \, dx, v = e^x \\
+                I &= \left[ \frac{e^x}{1+x} - \int e^x \cdot \left(-\frac{1}{(1+x)^2}\right) \, dx \right] - \int \frac{e^x}{(1+x)^2} \, dx \\
+                &= \frac{e^x}{1+x} + \int \frac{e^x}{(1+x)^2} \, dx - \int \frac{e^x}{(1+x)^2} \, dx \\
+                &= \frac{e^x}{1+x} + C
+                \end{aligned}
+                $$
+                (这是 $\int e^x [f(x) + f'(x)] dx = e^x f(x) + C$ 的一个例子, $f(x) = \frac{1}{1+x}$)
+                </p>
+            </div>
+
+            <div class="solution-item">
+                <p><strong>38. $\int \sqrt{\tan x} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \sqrt{\tan x}$，则 $u^2 = \tan x, x = \arctan(u^2), dx = \frac{2u}{1+u^4} \, du$。
+                $$
+                I = \int u \cdot \frac{2u}{1+u^4} \, du = \int \frac{2u^2}{1+u^4} \, du
+                $$
+                拆分：
+                $$
+                I = \int \frac{(u^2+1) + (u^2-1)}{1+u^4} \, du = \int \frac{u^2+1}{u^4+1} \, du + \int \frac{u^2-1}{u^4+1} \, du
+                $$
+                这两个积分就是第 (35) 题和第 (34) 题的形式（变量为 $u$）。
+                $$
+                \int \frac{u^2+1}{u^4+1} \, du = \frac{1}{\sqrt{2}} \arctan\left(\frac{u^2 - 1}{\sqrt{2}u}\right)
+                $$
+                $$
+                \int \frac{u^2-1}{u^4+1} \, du = \frac{1}{2\sqrt{2}} \ln\left|\frac{u^2 - \sqrt{2}u + 1}{u^2 + \sqrt{2}u + 1}\right|
+                $$
+                代回 $u = \sqrt{\tan x}$：
+                $$
+                I = \frac{1}{\sqrt{2}} \arctan\left(\frac{\tan x - 1}{\sqrt{2\tan x}}\right) + \frac{1}{2\sqrt{2}} \ln\left|\frac{\tan x - \sqrt{2\tan x} + 1}{\tan x + \sqrt{2\tan x} + 1}\right| + C
+                $$
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>39. $\int \frac{1}{(1+x^2)(1+(\arctan x)^2)} \, dx$</strong></p>
+                <p><strong>解析：</strong> 令 $u = \arctan x$。
+                $du = \frac{1}{1+x^2} \, dx$。
+                $$
+                \begin{aligned}
+                I &= \int \frac{1}{1+u^2} \, du \\
+                &= \arctan u + C \\
+                &= \arctan(\arctan x) + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+            
+            <div class="solution-item">
+                <p><strong>40. $\int \frac{x+4}{x^3+3x^2+2x} \, dx$</strong></p>
+                <p><strong>解析：</strong> 
+                分母分解：$x^3+3x^2+2x = x(x^2+3x+2) = x(x+1)(x+2)$。
+                设 $\frac{x+4}{x(x+1)(x+2)} = \frac{A}{x} + \frac{B}{x+1} + \frac{C}{x+2}$
+                通分：$x+4 = A(x+1)(x+2) + Bx(x+2) + Cx(x+1)$
+                令 $x=0 \implies 4 = A(1)(2) \implies A = 2$
+                令 $x=-1 \implies 3 = B(-1)(1) \implies B = -3$
+                令 $x=-2 \implies 2 = C(-2)(-1) \implies C = 1$
+                $$
+                \begin{aligned}
+                I &= \int \left( \frac{2}{x} - \frac{3}{x+1} + \frac{1}{x+2} \right) \, dx \\
+                &= 2\ln|x| - 3\ln|x+1| + \ln|x+2| + C \\
+                &= \ln\left|\frac{x^2 (x+2)}{(x+1)^3}\right| + C
+                \end{aligned}
+                $$
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

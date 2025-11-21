@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>中等难度不定积分练习</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .problem-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #ecf0f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+        details {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 12px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        .solution-content {
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        .final-answer {
+            font-weight: bold;
+            color: #27ae60;
+            background-color: #eafaf1;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>中等难度不定积分练习</h1>
+
+        <h2>📝 题目</h2>
+        <p>请计算以下不定积分：</p>
+        <ol class="problem-list">
+            <li><p><code>∫ x√(x - 2) dx</code></p></li>
+            <li><p><code>∫ x cos(3x) dx</code></p></li>
+            <li><p><code>∫ sin²(x) cos(x) dx</code></p></li>
+            <li><p><code>∫ (2x + 1) / (x² - 4x + 3) dx</code></p></li>
+            <li><p><code>∫ 1 / (x² + 4x + 8) dx</code></p></li>
+        </ol>
+
+        <hr style="margin: 30px 0;">
+
+        <h2>💡 详细解析</h2>
+        
+        <details>
+            <summary>题目 1: <code>∫ x√(x - 2) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p>这道题适合使用 <strong>u-换元法 (u-Substitution)</strong>。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = x - 2</code>。
+                <br>
+                那么，<code>du = dx</code> 并且 <code>x = u + 2</code>。</p>
+                
+                <p><strong>步骤 2:</strong> 将原积分用 <code>u</code> 替换：
+                <br>
+                <code>∫ x√(x - 2) dx = ∫ (u + 2)√u du</code></p>
+                
+                <p><strong>步骤 3:</strong> 展开并积分：
+                <br>
+                <code>∫ (u + 2)u^(1/2) du = ∫ (u^(3/2) + 2u^(1/2)) du</code>
+                <br>
+                <code>= ∫ u^(3/2) du + 2∫ u^(1/2) du</code>
+                <br>
+                <code>= [u^(5/2) / (5/2)] + 2[u^(3/2) / (3/2)] + C</code>
+                <br>
+                <code>= (2/5)u^(5/2) + (4/3)u^(3/2) + C</code></p>
+                
+                <p><strong>步骤 4:</strong> 将 <code>u</code> 替换回 <code>x - 2</code>：
+                <br>
+                <code>= (2/5)(x - 2)^(5/2) + (4/3)(x - 2)^(3/2) + C</code></p>
+                
+                <p class="final-answer">最终答案: (2/5)(x - 2)^(5/2) + (4/3)(x - 2)^(3/2) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 2: <code>∫ x cos(3x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p>这道题是典型的 <strong>分部积分法 (Integration by Parts)</strong>，公式为 <code>∫ u dv = uv - ∫ v du</code>。</p>
+                <p><strong>步骤 1:</strong> 选择 <code>u</code> 和 <code>dv</code>。
+                <br>
+                根据 LIATE (对数, 反三角, 代数, 三角, 指数) 准则，我们选择：
+                <br>
+                设 <code>u = x</code> (代数)
+                <br>
+                设 <code>dv = cos(3x) dx</code> (三角)
+                </p>
+                
+                <p><strong>步骤 2:</strong> 计算 <code>du</code> 和 <code>v</code>：
+                <br>
+                <code>du = dx</code>
+                <br>
+                <code>v = ∫ cos(3x) dx = (1/3)sin(3x)</code>
+                </p>
+                
+                <p><strong>步骤 3:</strong> 应用分部积分公式：
+                <br>
+                <code>∫ x cos(3x) dx = uv - ∫ v du</code>
+                <br>
+                <code>= x * (1/3)sin(3x) - ∫ (1/3)sin(3x) dx</code>
+                <br>
+                <code>= (1/3)x sin(3x) - (1/3)∫ sin(3x) dx</code></p>
+                
+                <p><strong>步骤 4:</strong> 计算剩余的积分：
+                <br>
+                <code>∫ sin(3x) dx = -(1/3)cos(3x)</code></p>
+                
+                <p><strong>步骤 5:</strong> 合并结果：
+                <br>
+                <code>= (1/3)x sin(3x) - (1/3)[-(1/3)cos(3x)] + C</code>
+                <br>
+                <code>= (1/3)x sin(3x) + (1/9)cos(3x) + C</code></p>
+                
+                <p class="final-answer">最终答案: (1/3)x sin(3x) + (1/9)cos(3x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 3: <code>∫ sin²(x) cos(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p>这道题适合使用 <strong>u-换元法 (u-Substitution)</strong>，因为 <code>cos(x)</code> 是 <code>sin(x)</code> 的导数。</p>
+                
+                <p><strong>步骤 1:</strong> 设 <code>u = sin(x)</code>。</p>
+                
+                <p><strong>步骤 2:</strong> 计算 <code>du</code>：
+                <br>
+                <code>du = cos(x) dx</code></p>
+                
+                <p><strong>步骤 3:</strong> 将原积分用 <code>u</code> 替换：
+                <br>
+                <code>∫ sin²(x) cos(x) dx = ∫ u² du</code></p>
+                
+                <p><strong>步骤 4:</strong> 对 <code>u</code> 积分：
+                <br>
+                <code>∫ u² du = u³/3 + C</code></p>
+                
+                <p><strong>步骤 5:</strong> 将 <code>u</code> 替换回 <code>sin(x)</code>：
+                <br>
+                <code>= (sin³(x))/3 + C</code></p>
+                
+                <p class="final-answer">最终答案: (1/3)sin³(x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 4: <code>∫ (2x + 1) / (x² - 4x + 3) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p>这道题需要使用 <strong>部分分式分解 (Partial Fraction Decomposition)</strong>。</p>
+                
+                <p><strong>步骤 1:</strong> 分解分母：
+                <br>
+                <code>x² - 4x + 3 = (x - 1)(x - 3)</code></p>
+                
+                <p><strong>步骤 2:</strong> 设
+                立部分分式：
+                <br>
+                <code>(2x + 1) / [(x - 1)(x - 3)] = A / (x - 1) + B / (x - 3)</code></p>
+                
+                <p><strong>步骤 3:</strong> 通分并求解 A 和 B：
+                <br>
+                <code>2x + 1 = A(x - 3) + B(x - 1)</code>
+                <br>
+                当 <code>x = 1</code> 时: <code>2(1) + 1 = A(1 - 3) + B(0)</code>
+                <br>
+                <code>3 = -2A</code>  => <code>A = -3/2</code>
+                <br>
+                当 <code>x = 3</code> 时: <code>2(3) + 1 = A(0) + B(3 - 1)</code>
+                <br>
+                <code>7 = 2B</code>  => <code>B = 7/2</code></p>
+                
+                <p><strong>步骤 4:</strong> 将原积分拆分为两个积分：
+                <br>
+                <code>∫ [(-3/2) / (x - 1) + (7/2) / (x - 3)] dx</code>
+                <br>
+                <code>= (-3/2)∫ 1/(x - 1) dx + (7/2)∫ 1/(x - 3) dx</code></p>
+                
+                <p><strong>步骤 5:</strong> 积分（均为 <code>ln</code> 形式）：
+                <br>
+                <code>= (-3/2)ln|x - 1| + (7/2)ln|x - 3| + C</code></p>
+                
+                <p class="final-answer">最终答案: (7/2)ln|x - 3| - (3/2)ln|x - 1| + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 5: <code>∫ 1 / (x² + 4x + 8) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p>这道题的分母无法分解因式，需要通过 <strong>配方法 (Completing the Square)</strong> 将其转换为 <code>arctan</code> 的形式。</p>
+                
+                <p><strong>步骤 1:</strong> 对分母进行配方：
+                <br>
+                <code>x² + 4x + 8 = (x² + 4x + 4) + 4</code>
+                <br>
+                <code>= (x + 2)² + 4</code>
+                <br>
+                <code>= (x + 2)² + 2²</code></p>
+                
+                <p><strong>步骤 2:</strong> 重写积分：
+                <br>
+                <code>∫ 1 / [(x + 2)² + 2²] dx</code></p>
+                
+                <p><strong>步骤 3:</strong> 使用 <code>arctan</code> 积分公式：
+                <br>
+                标准形式为 <code>∫ 1 / (u² + a²) du = (1/a)arctan(u/a) + C</code>
+                <br>
+                在这里，<code>a = 2</code>，<code>u = x + 2</code>，且 <code>du = dx</code>。</p>
+                
+                <p><strong>步骤 4:</strong> 套用公式：
+                <br>
+                <code>= (1/2)arctan((x + 2) / 2) + C</code></p>
+                
+                <p class="final-answer">最终答案: (1/2)arctan((x + 2) / 2) + C</p>
+            </div>
+        </details>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>更多不定积分练习</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h3 {
+            font-size: 1.3em;
+            color: #34495e;
+            border-bottom: none;
+            margin-top: 25px;
+        }
+        .problem-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #ecf0f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 1.05em;
+        }
+        details {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 12px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+        }
+        .solution-content {
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        .final-answer {
+            font-weight: bold;
+            color: #27ae60;
+            background-color: #eafaf1;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>更多不定积分练习</h1>
+
+        <h2>📝 中等难度题目 (10道)</h2>
+        <p>请计算以下不定积分：</p>
+        <ol class="problem-list" start="6">
+            <li><p><code>∫ tan²(x) dx</code></p></li>
+            <li><p><code>∫ e^(2x) / (1 + e^(2x)) dx</code></p></li>
+            <li><p><code>∫ x e^(-x) dx</code></p></li>
+            <li><p><code>∫ 1 / √(9 - x²) dx</code></p></li>
+            <li><p><code>∫ 5 / (x² + x - 6) dx</code></p></li>
+            <li><p><code>∫ ln(x) / x dx</code></p></li>
+            <li><p><code>∫ x² sin(x³) dx</code></p></li>
+            <li><p><code>∫ 1 / (9x² + 1) dx</code></p></li>
+            <li><p><code>∫ arcsin(x) dx</code></p></li>
+            <li><p><code>∫ (x + 1) / √x dx</code></p></li>
+        </ol>
+
+        <h2>🚀 进阶难度题目 (20道)</h2>
+        <p>请计算以下不定积分：</p>
+        <ol class="problem-list" start="16">
+            <li><p><code>∫ x² e^x dx</code></p></li>
+            <li><p><code>∫ e^x sin(x) dx</code></p></li>
+            <li><p><code>∫ sec³(x) dx</code></p></li>
+            <li><p><code>∫ 1 / (x² √(x² + 4)) dx</code></p></li>
+            <li><p><code>∫ (x + 1) / (x - 1)² dx</code></p></li>
+            <li><p><code>∫ sin³(x) cos²(x) dx</code></p></li>
+            <li><p><code>∫ 1 / (1 + √x) dx</code></p></li>
+            <li><p><code>∫ 1 / (1 + cos(x)) dx</code></p></li>
+            <li><p><code>∫ √(16 - x²) dx</code></p></li>
+            <li><p><code>∫ ln(x² + 1) dx</code></p></li>
+            <li><p><code>∫ (3x - 5) / (x² + 1) dx</code></p></li>
+            <li><p><code>∫ e^(√x) dx</code></p></li>
+            <li><p><code>∫ 1 / (x³ + 1) dx</code></p></li>
+            <li><p><code>∫ x arctan(x) dx</code></p></li>
+            <li><p><code>∫ 1 / (x ln(x)) dx</code></p></li>
+            <li><p><code>∫ tan⁴(x) dx</code></p></li>
+            <li><p><code>∫ cos(2x) sin(3x) dx</code></p></li>
+            <li><p><code>∫ 1 / (x² - 2x + 5)^(3/2) dx</code></p></li>
+            <li><p><code>∫ √(x² - 1) dx</code> (x > 1)</p></li>
+            <li><p><code>∫ 1 / ((1 + x)^(1/2) + (1 + x)^(1/3)) dx</code></p></li>
+        </ol>
+
+        <hr style="margin: 30px 0;">
+
+        <h2>💡 详细解析</h2>
+
+        <h3>中等难度解析</h3>
+
+        <details>
+            <summary>题目 6: <code>∫ tan²(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 利用三角恒等式 <code>tan²(x) = sec²(x) - 1</code>。</p>
+                <p><strong>步骤 1:</strong> 替换被积函数：
+                <br><code>∫ tan²(x) dx = ∫ (sec²(x) - 1) dx</code></p>
+                <p><strong>步骤 2:</strong> 拆分为两个积分：
+                <br><code>= ∫ sec²(x) dx - ∫ 1 dx</code></p>
+                <p><strong>步骤 3:</strong> 分别积分。我们知道 <code>(tan(x))' = sec²(x)</code>：
+                <br><code>= tan(x) - x + C</code></p>
+                <p class="final-answer">最终答案: tan(x) - x + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 7: <code>∫ e^(2x) / (1 + e^(2x)) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法。注意分子几乎是分母的导数。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = 1 + e^(2x)</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code>：
+                <br><code>du = (e^(2x) * 2) dx</code>  => <code>(1/2) du = e^(2x) dx</code></p>
+                <p><strong>步骤 3:</strong> 替换积分：
+                <br><code>∫ 1/u * (1/2) du = (1/2) ∫ 1/u du</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= (1/2) ln|u| + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code> (由于 <code>1 + e^(2x)</code> 恒为正，可去绝对值)：
+                <br><code>= (1/2) ln(1 + e^(2x)) + C</code></p>
+                <p class="final-answer">最终答案: (1/2) ln(1 + e^(2x)) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 8: <code>∫ x e^(-x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 分部积分法 <code>∫ u dv = uv - ∫ v du</code>。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = x</code> 和 <code>dv = e^(-x) dx</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code> 和 <code>v</code>：
+                <br><code>du = dx</code>
+                <br><code>v = ∫ e^(-x) dx = -e^(-x)</code></p>
+                <p><strong>步骤 3:</strong> 套用公式：
+                <br><code>∫ x e^(-x) dx = x(-e^(-x)) - ∫ (-e^(-x)) dx</code>
+                <br><code>= -x e^(-x) + ∫ e^(-x) dx</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= -x e^(-x) - e^(-x) + C</code></p>
+                <p class="final-answer">最终答案: -x e^(-x) - e^(-x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 9: <code>∫ 1 / √(9 - x²) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 识别 <code>arcsin</code> 积分形式。</p>
+                <p><strong>步骤 1:</strong> 标准形式为 <code>∫ 1 / √(a² - u²) du = arcsin(u/a) + C</code>。</p>
+                <p><strong>步骤 2:</strong> 匹配形式：
+                <br><code>∫ 1 / √(3² - x²) dx</code>
+                <br>这里 <code>a = 3</code> 且 <code>u = x</code>。</p>
+                <p><strong>步骤 3:</strong> 套用公式：
+                <br><code>= arcsin(x/3) + C</code></p>
+                <p class="final-answer">最终答案: arcsin(x/3) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 10: <code>∫ 5 / (x² + x - 6) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 部分分式分解。</p>
+                <p><strong>步骤 1:</strong> 分解分母：
+                <br><code>x² + x - 6 = (x + 3)(x - 2)</code></p>
+                <p><strong>步骤 2:</strong> 设
+立部分分式：
+                <br><code>5 / [(x + 3)(x - 2)] = A / (x + 3) + B / (x - 2)</code></p>
+                <p><strong>步骤 3:</strong> 求解 A 和 B：
+                <br><code>5 = A(x - 2) + B(x + 3)</code>
+                <br>当 <code>x = 2</code>: <code>5 = B(5)</code> => <code>B = 1</code>
+                <br>当 <code>x = -3</code>: <code>5 = A(-5)</code> => <code>A = -1</code></p>
+                <p><strong>步骤 4:</strong> 拆分积分：
+                <br><code>∫ [-1 / (x + 3) + 1 / (x - 2)] dx</code></p>
+                <p><strong>步骤 5:</strong> 积分：
+                <br><code>= -ln|x + 3| + ln|x - 2| + C</code>
+                <br><code>= ln|(x - 2) / (x + 3)| + C</code> (利用对数性质合并)</p>
+                <p class="final-answer">最终答案: ln|x - 2| - ln|x + 3| + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 11: <code>∫ ln(x) / x dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = ln(x)</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code>：
+                <br><code>du = (1/x) dx</code></p>
+                <p><strong>步骤 3:</strong> 替换积分：
+                <br><code>∫ u du</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= u²/2 + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>= (ln(x))²/2 + C</code></p>
+                <p class="final-answer">最终答案: (1/2)(ln(x))² + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 12: <code>∫ x² sin(x³) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = x³</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code>：
+                <br><code>du = 3x² dx</code> => <code>(1/3) du = x² dx</code></p>
+                <p><strong>步骤 3:</strong> 替换积分：
+                <br><code>∫ sin(u) * (1/3) du = (1/3) ∫ sin(u) du</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= (1/3)(-cos(u)) + C = -1/3 cos(u) + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>= -1/3 cos(x³) + C</code></p>
+                <p class="final-answer">最终答案: -1/3 cos(x³) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 13: <code>∫ 1 / (9x² + 1) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 识别 <code>arctan</code> 形式并使用 u-换元法。</p>
+                <p><strong>步骤 1:</strong> 标准形式为 <code>∫ 1 / (u² + a²) du = (1/a)arctan(u/a) + C</code>。</p>
+                <p><strong>步骤 2:</strong> 匹配形式。原式可写作 <code>∫ 1 / ((3x)² + 1²) dx</code>。</p>
+                <p><strong>步骤 3:</strong> 设 <code>u = 3x</code> (<code>a = 1</code>)。
+                <br><code>du = 3 dx</code> => <code>(1/3) du = dx</code></p>
+                <p><strong>步骤 4:</strong> 替换积分：
+                <br><code>∫ 1 / (u² + 1) * (1/3) du = (1/3) ∫ 1 / (u² + 1) du</code></p>
+                <p><strong>步骤 5:</strong> 积分：
+                <br><code>= (1/3) arctan(u) + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>= (1/3) arctan(3x) + C</code></p>
+                <p class="final-answer">最终答案: (1/3) arctan(3x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 14: <code>∫ arcsin(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 分部积分法 <code>∫ u dv = uv - ∫ v du</code>。
+                <br>
+                (技巧: 当被积函数只有反三角函数或对数函数时，设 <code>dv = dx</code>)</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = arcsin(x)</code> 和 <code>dv = dx</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code> 和 <code>v</code>：
+                <br><code>du = (1 / √(1 - x²)) dx</code>
+                <br><code>v = x</code></p>
+                <p><strong>步骤 3:</strong> 套用公式：
+                <br><code>∫ arcsin(x) dx = x * arcsin(x) - ∫ x / √(1 - x²) dx</code></p>
+                <p><strong>步骤 4:</strong> 求解 <code>∫ x / √(1 - x²) dx</code> (使用 u-换元)：
+                <br>设 <code>w = 1 - x²</code>, <code>dw = -2x dx</code> => <code>x dx = -1/2 dw</code>
+                <br><code>∫ 1 / √w * (-1/2) dw = -1/2 ∫ w^(-1/2) dw</code>
+                <br><code>= -1/2 [w^(1/2) / (1/2)] = -w^(1/2) = -√(1 - x²)</code></p>
+                <p><strong>步骤 5:</strong> 合并结果：
+                <br><code>= x * arcsin(x) - [-√(1 - x²)] + C</code>
+                <br><code>= x arcsin(x) + √(1 - x²) + C</code></p>
+                <p class="final-answer">最终答案: x arcsin(x) + √(1 - x²) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 15: <code>∫ (x + 1) / √x dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 拆分分数。</p>
+                <p><strong>步骤 1:</strong> 拆分：
+                <br><code>∫ (x/√x + 1/√x) dx</code></p>
+                <p><strong>步骤 2:</strong> 化简为幂函数：
+                <br><code>∫ (x^(1/2) + x^(-1/2)) dx</code></p>
+                <p><strong>步骤 3:</strong> 积分：
+                <br><code>= [x^(3/2) / (3/2)] + [x^(1/2) / (1/2)] + C</code>
+                <br><code>= (2/3)x^(3/2) + 2x^(1/2) + C</code></p>
+                <p class="final-answer">最终答案: (2/3)x^(3/2) + 2√x + C</p>
+            </div>
+        </details>
+
+        <h3>🚀 进阶难度解析</h3>
+
+        <details>
+            <summary>题目 16: <code>∫ x² e^x dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 两次分部积分法。</p>
+                <p><strong>步骤 1 (第一次分部积分):</strong>
+                <br>设 <code>u = x²</code>, <code>dv = e^x dx</code>
+                <br><code>du = 2x dx</code>, <code>v = e^x</code>
+                <br><code>∫ x² e^x dx = x²e^x - ∫ 2x e^x dx = x²e^x - 2∫ x e^x dx</code></p>
+                <p><strong>步骤 2 (第二次分部积分, 针对 <code>∫ x e^x dx</code>):</strong>
+                <br>设 <code>u = x</code>, <code>dv = e^x dx</code>
+                <br><code>du = dx</code>, <code>v = e^x</code>
+                <br><code>∫ x e^x dx = xe^x - ∫ e^x dx = xe^x - e^x</code></p>
+                <p><strong>步骤 3:</strong> 将步骤2的结果代回步骤1：
+                <br><code>= x²e^x - 2[xe^x - e^x] + C</code>
+                <br><code>= x²e^x - 2xe^x + 2e^x + C</code></p>
+                <p class="final-answer">最终答案: e^x (x² - 2x + 2) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 17: <code>∫ e^x sin(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 循环分部积分法 (两次分部积分后移项)。</p>
+                <p>设 <code>I = ∫ e^x sin(x) dx</code></p>
+                <p><strong>步骤 1 (第一次分部积分):</strong>
+                <br>设 <code>u = sin(x)</code>, <code>dv = e^x dx</code>
+                <br><code>du = cos(x) dx</code>, <code>v = e^x</code>
+                <br><code>I = e^x sin(x) - ∫ e^x cos(x) dx</code></p>
+                <p><strong>步骤 2 (第二次分部积分, 针对 <code>∫ e^x cos(x) dx</code>):</strong>
+                <br>设 <code>u = cos(x)</code>, <code>dv = e^x dx</code>
+                <br><code>du = -sin(x) dx</code>, <code>v = e^x</code>
+                <br><code>∫ e^x cos(x) dx = e^x cos(x) - ∫ e^x (-sin(x)) dx = e^x cos(x) + ∫ e^x sin(x) dx</code></p>
+                <p><strong>步骤 3:</strong> 将步骤2的结果代回步骤1 (注意 <code>∫ e^x sin(x) dx</code> 就是 <code>I</code>)：
+                <br><code>I = e^x sin(x) - [e^x cos(x) + I]</code>
+                <br><code>I = e^x sin(x) - e^x cos(x) - I</code></p>
+                <p><strong>步骤 4:</strong> 移项求解 <code>I</code>：
+                <br><code>2I = e^x sin(x) - e^x cos(x)</code>
+                <br><code>I = (1/2)e^x (sin(x) - cos(x)) + C</code> (最后加上常数C)</p>
+                <p class="final-answer">最终答案: (1/2)e^x (sin(x) - cos(x)) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 18: <code>∫ sec³(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 分部积分法和三角恒等式。</p>
+                <p>设 <code>I = ∫ sec³(x) dx = ∫ sec(x) sec²(x) dx</code></p>
+                <p><strong>步骤 1 (分部积分):</strong>
+                <br>设 <code>u = sec(x)</code>, <code>dv = sec²(x) dx</code>
+                <br><code>du = sec(x)tan(x) dx</code>, <code>v = tan(x)</code>
+                <br><code>I = sec(x)tan(x) - ∫ tan(x) (sec(x)tan(x)) dx</code>
+                <br><code>I = sec(x)tan(x) - ∫ sec(x)tan²(x) dx</code></p>
+                <p><strong>步骤 2:</strong> 使用恒等式 <code>tan²(x) = sec²(x) - 1</code>：
+                <br><code>I = sec(x)tan(x) - ∫ sec(x)(sec²(x) - 1) dx</code>
+                <br><code>I = sec(x)tan(x) - ∫ (sec³(x) - sec(x)) dx</code>
+                <br><code>I = sec(x)tan(x) - ∫ sec³(x) dx + ∫ sec(x) dx</code></p>
+                <p><strong>步骤 3:</strong> 替换 <code>I</code> 并移项：
+                <br><code>I = sec(x)tan(x) - I + ∫ sec(x) dx</code>
+                <br><code>2I = sec(x)tan(x) + ∫ sec(x) dx</code></p>
+                <p><strong>步骤 4:</strong> 求解 <code>∫ sec(x) dx</code> (这是一个标准积分)：
+                <br><code>∫ sec(x) dx = ln|sec(x) + tan(x)|</code></p>
+                <p><strong>步骤 5:</strong> 合并并求解 <code>I</code>：
+                <br><code>2I = sec(x)tan(x) + ln|sec(x) + tan(x)|</code>
+                <br><code>I = (1/2)(sec(x)tan(x) + ln|sec(x) + tan(x)|) + C</code></p>
+                <p class="final-answer">最终答案: (1/2)sec(x)tan(x) + (1/2)ln|sec(x) + tan(x)| + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 19: <code>∫ 1 / (x² √(x² + 4)) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 三角换元法 (<code>x² + a²</code> 形式)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>x = 2tan(θ)</code> (因为 <code>a=2</code>)。
+                <br><code>dx = 2sec²(θ) dθ</code>
+                <br><code>x² = 4tan²(θ)</code>
+                <br><code>√(x² + 4) = √(4tan²(θ) + 4) = √(4sec²(θ)) = 2sec(θ)</code> (假设 <code>sec(θ) > 0</code>)</p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ 1 / (4tan²(θ) * 2sec(θ)) * (2sec²(θ) dθ)</code></p>
+                <p><strong>步骤 3:</strong> 化简：
+                <br><code>= ∫ (2sec²(θ)) / (8tan²(θ)sec(θ)) dθ = (1/4) ∫ sec(θ) / tan²(θ) dθ</code>
+                <br><code>= (1/4) ∫ (1/cos(θ)) / (sin²(θ)/cos²(θ)) dθ</code>
+                <br><code>= (1/4) ∫ cos(θ) / sin²(θ) dθ</code></p>
+                <p><strong>步骤 4:</strong> 使用 u-换元法：
+                <br>设 <code>u = sin(θ)</code>, <code>du = cos(θ) dθ</code>
+                <br><code>= (1/4) ∫ 1/u² du = (1/4) ∫ u^(-2) du</code>
+                <br><code>= (1/4) [-u^(-1)] + C = -1 / (4u) + C = -1 / (4sin(θ)) + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>tan(θ) = x/2</code> (对边=x, 邻边=2)
+                <br>斜边 = <code>√(x² + 2²) = √(x² + 4)</code>
+                <br><code>sin(θ) = 对边 / 斜边 = x / √(x² + 4)</code>
+                <br><code>= -1 / (4 * (x / √(x² + 4))) + C = -√(x² + 4) / (4x) + C</code></p>
+                <p class="final-answer">最终答案: -√(x² + 4) / (4x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 20: <code>∫ (x + 1) / (x - 1)² dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法 (比部分分式更简单)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = x - 1</code>。
+                <br>那么 <code>x = u + 1</code> 且 <code>dx = du</code>。</p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ ((u + 1) + 1) / u² du = ∫ (u + 2) / u² du</code></p>
+                <p><strong>步骤 3:</strong> 拆分分数：
+                <br><code>∫ (u/u² + 2/u²) du = ∫ (1/u + 2u^(-2)) du</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= ln|u| + 2[u^(-1) / -1] + C</code>
+                <br><code>= ln|u| - 2/u + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>= ln|x - 1| - 2/(x - 1) + C</code></p>
+                <p class="final-answer">最终答案: ln|x - 1| - 2/(x - 1) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 21: <code>∫ sin³(x) cos²(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 三角函数积分 (奇数次幂)。</p>
+                <p><strong>步骤 1:</strong> 分离一个 <code>sin(x)</code>：
+                <br><code>∫ sin²(x) cos²(x) sin(x) dx</code></p>
+                <p><strong>步骤 2:</strong> 用 <code>1 - cos²(x)</code> 替换 <code>sin²(x)</code>：
+                <br><code>∫ (1 - cos²(x)) cos²(x) sin(x) dx</code></p>
+                <p><strong>步骤 3:</strong> u-换元法：
+                <br>设 <code>u = cos(x)</code>, <code>du = -sin(x) dx</code> => <code>sin(x) dx = -du</code></p>
+                <p><strong>步骤 4:</strong> 替换积分：
+                <br><code>∫ (1 - u²) u² (-du) = -∫ (u² - u⁴) du</code></p>
+                <p><strong>步骤 5:</strong> 积分：
+                <br><code>= -[u³/3 - u⁵/5] + C = u⁵/5 - u³/3 + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>= (cos⁵(x))/5 - (cos³(x))/3 + C</code></p>
+                <p class="final-answer">最终答案: (1/5)cos⁵(x) - (1/3)cos³(x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 22: <code>∫ 1 / (1 + √x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法 (有理化)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = √x</code>。
+                <br>那么 <code>x = u²</code> 且 <code>dx = 2u du</code>。</p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ 1 / (1 + u) * (2u du) = ∫ 2u / (1 + u) du</code></p>
+                <p><strong>步骤 3:</strong> (技巧) 在分子上加1减1 (或多项式长除法)：
+                <br><code>∫ 2(u + 1 - 1) / (1 + u) du = 2 ∫ [(u + 1)/(u + 1) - 1/(u + 1)] du</code>
+                <br><code>= 2 ∫ (1 - 1/(u + 1)) du</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= 2[u - ln|u + 1|] + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>= 2[√x - ln|√x + 1|] + C</code> (因为 <code>√x+1</code> 恒正，可去绝对值)</p>
+                <p class="final-answer">最终答案: 2√x - 2ln(√x + 1) + C</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>题目 23: <code>∫ 1 / (1 + cos(x)) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 半角公式 (比韦氏替换简单)。</p>
+                <p><strong>步骤 1:</strong> 使用半角公式 <code>cos(x) = 2cos²(x/2) - 1</code>。
+                <br><code>1 + cos(x) = 1 + (2cos²(x/2) - 1) = 2cos²(x/2)</code></p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ 1 / (2cos²(x/2)) dx = (1/2) ∫ sec²(x/2) dx</code></p>
+                <p><strong>步骤 3:</strong> u-换元法：
+                <br>设 <code>u = x/2</code>, <code>du = (1/2) dx</code> => <code>dx = 2 du</code></p>
+                <p><strong>步骤 4:</strong> 替换并积分：
+                <br><code>(1/2) ∫ sec²(u) * (2 du) = ∫ sec²(u) du</code>
+                <br><code>= tan(u) + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code>：
+                <br><code>= tan(x/2) + C</code></p>
+                <p class="final-answer">最终答案: tan(x/2) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 24: <code>∫ √(16 - x²) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 三角换元法 (<code>a² - x²</code> 形式)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>x = 4sin(θ)</code> (因为 <code>a=4</code>)。
+                <br><code>dx = 4cos(θ) dθ</code>
+                <br><code>√(16 - x²) = √(16 - 16sin²(θ)) = √(16cos²(θ)) = 4cos(θ)</code></p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ 4cos(θ) * (4cos(θ) dθ) = 16 ∫ cos²(θ) dθ</code></p>
+                <p><strong>步骤 3:</strong> 使用降幂公式 <code>cos²(θ) = (1 + cos(2θ)) / 2</code>：
+                <br><code>16 ∫ (1 + cos(2θ)) / 2 dθ = 8 ∫ (1 + cos(2θ)) dθ</code></p>
+                <p><strong>步骤 4:</strong> 积分：
+                <br><code>= 8 [θ + (1/2)sin(2θ)] + C = 8θ + 4sin(2θ) + C</code></p>
+                <p><strong>步骤 5:</strong> 使用 <code>sin(2θ) = 2sin(θ)cos(θ)</code>：
+                <br><code>= 8θ + 8sin(θ)cos(θ) + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>sin(θ) = x/4</code> => <code>θ = arcsin(x/4)</code>
+                <br><code>cos(θ) = √(1 - sin²(θ)) = √(1 - (x/4)²) = √( (16-x²)/16 ) = √(16 - x²) / 4</code>
+                <br><code>= 8arcsin(x/4) + 8(x/4)(√(16 - x²) / 4) + C</code>
+                <br><code>= 8arcsin(x/4) + (x/2)√(16 - x²) + C</code></p>
+                <p class="final-answer">最终答案: 8arcsin(x/4) + (x/2)√(16 - x²) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 25: <code>∫ ln(x² + 1) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 分部积分法。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = ln(x² + 1)</code>, <code>dv = dx</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code> 和 <code>v</code>：
+                <br><code>du = (1 / (x² + 1)) * 2x dx = (2x / (x² + 1)) dx</code>
+                <br><code>v = x</code></p>
+                <p><strong>步骤 3:</strong> 套用公式：
+                <br><code>∫ ln(x² + 1) dx = x * ln(x² + 1) - ∫ x * (2x / (x² + 1)) dx</code>
+                <br><code>= x ln(x² + 1) - ∫ (2x² / (x² + 1)) dx</code></p>
+                <p><strong>步骤 4:</strong> 求解 <code>∫ (2x² / (x² + 1)) dx</code> (技巧：分子加减)：
+                <br><code>∫ 2(x² + 1 - 1) / (x² + 1) dx = 2 ∫ [(x² + 1)/(x² + 1) - 1/(x² + 1)] dx</code>
+                <br><code>= 2 ∫ (1 - 1/(x² + 1)) dx</code>
+                <br><code>= 2[x - arctan(x)]</code></p>
+                <p><strong>步骤 5:</strong> 合并结果：
+                <br><code>= x ln(x² + 1) - 2[x - arctan(x)] + C</code>
+                <br><code>= x ln(x² + 1) - 2x + 2arctan(x) + C</code></p>
+                <p class="final-answer">最终答案: x ln(x² + 1) - 2x + 2arctan(x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 26: <code>∫ (3x - 5) / (x² + 1) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 拆分积分为 <code>ln</code> 部分和 <code>arctan</code> 部分。</p>
+                <p><strong>步骤 1:</strong> 拆分：
+                <br><code>∫ [3x / (x² + 1) - 5 / (x² + 1)] dx</code>
+                <br><code>= ∫ 3x / (x² + 1) dx - ∫ 5 / (x² + 1) dx</code></p>
+                <p><strong>步骤 2 (第一个积分):</strong> 使用 u-换元：
+                <br>设 <code>u = x² + 1</code>, <code>du = 2x dx</code> => <code>x dx = (1/2) du</code>
+                <br><code>∫ 3 * (1/u) * (1/2) du = (3/2) ∫ 1/u du = (3/2) ln|u| = (3/2) ln(x² + 1)</code></p>
+                <p><strong>步骤 3 (第二个积分):</strong> <code>arctan</code> 标准形式：
+                <br><code>∫ 5 / (x² + 1) dx = 5 ∫ 1 / (x² + 1) dx = 5 arctan(x)</code></p>
+                <p><strong>步骤 4:</strong> 合并结果：
+                <br><code>= (3/2) ln(x² + 1) - 5 arctan(x) + C</code></p>
+                <p class="final-answer">最终答案: (3/2) ln(x² + 1) - 5 arctan(x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 27: <code>∫ e^(√x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法后接分部积分法。</p>
+                <p><strong>步骤 1 (u-换元):</strong>
+                <br>设 <code>u = √x</code>。
+                <br><code>x = u²</code>, <code>dx = 2u du</code></p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ e^u * (2u du) = 2 ∫ u e^u du</code></p>
+                <p><strong>步骤 3 (分部积分, 针对 <code>∫ u e^u du</code>):</strong>
+                <br>设 <code>w = u</code>, <code>dv = e^u du</code>
+                <br><code>dw = du</code>, <code>v = e^u</code>
+                <br><code>∫ u e^u du = u e^u - ∫ e^u du = u e^u - e^u</code></p>
+                <p><strong>步骤 4:</strong> 合并结果：
+                <br><code>= 2[u e^u - e^u] + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>x</code> (<code>u = √x</code>)：
+                <br><code>= 2[√x e^(√x) - e^(√x)] + C</code>
+                <br><code>= 2e^(√x) (√x - 1) + C</code></p>
+                <p class="final-answer">最终答案: 2e^(√x) (√x - 1) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 28: <code>∫ 1 / (x³ + 1) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 部分分式分解 (含不可约二次因式)。</p>
+                <p><strong>步骤 1:</strong> 分解分母 (立方和)：
+                <br><code>x³ + 1 = (x + 1)(x² - x + 1)</code></p>
+                <p><strong>步骤 2:</strong> 设立部分分式：
+                <br><code>1 / (x³ + 1) = A / (x + 1) + (Bx + C) / (x² - x + 1)</code></p>
+                <p><strong>步骤 3:</strong> 求解 A, B, C：
+                <br><code>1 = A(x² - x + 1) + (Bx + C)(x + 1)</code>
+                <br>当 <code>x = -1</code>: <code>1 = A(1 + 1 + 1)</code> => <code>3A = 1</code> => <code>A = 1/3</code>
+                <br>比较 <code>x²</code> 系数: <code>0 = A + B</code> => <code>B = -A = -1/3</code>
+                <br>比较常数项: <code>1 = A + C</code> => <code>C = 1 - A = 2/3</code></p>
+                <p><strong>步骤 4:</strong> 拆分积分：
+                <br><code>∫ [ (1/3) / (x + 1) + (-1/3 x + 2/3) / (x² - x + 1) ] dx</code>
+                <br><code>= (1/3)∫ 1/(x+1) dx - (1/3)∫ (x - 2) / (x² - x + 1) dx</code></p>
+                <p><strong>步骤 5 (第一个积分):</strong>
+                <br><code>(1/3)ln|x + 1|</code></p>
+                <p><strong>步骤 6 (第二个积分):</strong> 拆分为 <code>ln</code> 和 <code>arctan</code>。
+                <br>分母导数为 <code>2x - 1</code>。
+                <br><code>x - 2 = (1/2)(2x - 1) - 3/2</code> (配凑导数)
+                <br><code>- (1/3)∫ [ (1/2)(2x - 1) / (x² - x + 1) - (3/2) / (x² - x + 1) ] dx</code>
+                <br><code>= - (1/6)∫ (2x - 1) / (x² - x + 1) dx + (1/2)∫ 1 / (x² - x + 1) dx</code>
+                <br>第一部分: <code>- (1/6)ln|x² - x + 1|</code>
+                <br>第二部分 (配方): <code>(1/2)∫ 1 / ((x - 1/2)² + 3/4) dx</code>
+                <br>使用 <code>arctan</code> (<code>a² = 3/4</code>, <code>a = √3/2</code>):
+                <br><code>= (1/2) * [1 / (√3/2)] * arctan((x - 1/2) / (√3/2))</code>
+                <br><code>= (1/√3) * arctan((2x - 1) / √3)</code></p>
+                <p><strong>步骤 7:</strong> 合并所有结果：
+                <br><code>= (1/3)ln|x + 1| - (1/6)ln(x² - x + 1) + (1/√3)arctan((2x - 1) / √3) + C</code></p>
+                <p class="final-answer">最终答案: (1/3)ln|x + 1| - (1/6)ln(x² - x + 1) + (√3/3)arctan((2x - 1)/√3) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 29: <code>∫ x arctan(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 分部积分法。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = arctan(x)</code>, <code>dv = x dx</code>。</p>
+                <p><strong>步骤 2:</strong> 求 <code>du</code> 和 <code>v</code>：
+                <br><code>du = (1 / (1 + x²)) dx</code>
+                <br><code>v = x²/2</code></p>
+                <p><strong>步骤 3:</strong> 套用公式：
+                <br><code>∫ x arctan(x) dx = (x²/2)arctan(x) - ∫ (x²/2) * (1 / (1 + x²)) dx</code>
+                <br><code>= (x²/2)arctan(x) - (1/2) ∫ x² / (1 + x²) dx</code></p>
+                <p><strong>步骤 4:</strong> 求解 <code>∫ x² / (1 + x²) dx</code> (分子加减1)：
+                <br><code>∫ (x² + 1 - 1) / (1 + x²) dx = ∫ [1 - 1 / (1 + x²)] dx</code>
+                <br><code>= x - arctan(x)</code></p>
+                <p><strong>步骤 5:</strong> 合并结果：
+                <br><code>= (x²/2)arctan(x) - (1/2)[x - arctan(x)] + C</code>
+                <br><code>= (x²/2)arctan(x) - x/2 + (1/2)arctan(x) + C</code>
+                <br><code>= (1/2)(x² + 1)arctan(x) - x/2 + C</code></p>
+                <p class="final-answer">最终答案: (1/2)(x² + 1)arctan(x) - x/2 + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 30: <code>∫ 1 / (x ln(x)) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> u-换元法。</p>
+                <p><strong>步骤 1:</strong> 将积分重写为 <code>∫ (1/x) / ln(x) dx</code>。</p>
+                <p><strong>步骤 2:</strong> 设 <code>u = ln(x)</code>。</p>
+                <p><strong>步骤 3:</strong> 求 <code>du</code>：
+                <br><code>du = (1/x) dx</code></p>
+                <p><strong>步骤 4:</strong> 替换积分：
+                <br><code>∫ 1/u du</code></p>
+                <p><strong>步骤 5:</strong> 积分：
+                <br><code>= ln|u| + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>= ln|ln(x)| + C</code></p>
+                <p class="final-answer">最终答案: ln|ln(x)| + C</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>题目 31: <code>∫ tan⁴(x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 递推使用 <code>tan²(x) = sec²(x) - 1</code>。</p>
+                <p><strong>步骤 1:</strong> 拆分 <code>tan⁴(x)</code>：
+                <br><code>∫ tan²(x) tan²(x) dx = ∫ tan²(x) (sec²(x) - 1) dx</code></p>
+                <p><strong>步骤 2:</strong> 展开：
+                <br><code>= ∫ tan²(x)sec²(x) dx - ∫ tan²(x) dx</code></p>
+                <p><strong>步骤 3 (第一个积分):</strong> u-换元：
+                <br>设 <code>u = tan(x)</code>, <code>du = sec²(x) dx</code>
+                <br><code>∫ u² du = u³/3 = (tan³(x))/3</code></p>
+                <p><strong>步骤 4 (第二个积分):</strong> (参考题目6)
+                <br><code>∫ tan²(x) dx = ∫ (sec²(x) - 1) dx = tan(x) - x</code></p>
+                <p><strong>步骤 5:</strong> 合并结果：
+                <br><code>= (tan³(x))/3 - [tan(x) - x] + C</code>
+                <br><code>= (1/3)tan³(x) - tan(x) + x + C</code></p>
+                <p class="final-answer">最终答案: (1/3)tan³(x) - tan(x) + x + C</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>题目 32: <code>∫ cos(2x) sin(3x) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 积化和差公式。</p>
+                <p><strong>步骤 1:</strong> 使用公式 <code>sin(A)cos(B) = (1/2)[sin(A + B) + sin(A - B)]</code>。
+                <br>令 <code>A = 3x</code>, <code>B = 2x</code>
+                <br><code>sin(3x)cos(2x) = (1/2)[sin(3x + 2x) + sin(3x - 2x)]</code>
+                <br><code>= (1/2)[sin(5x) + sin(x)]</code></p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ (1/2)[sin(5x) + sin(x)] dx = (1/2) ∫ sin(5x) dx + (1/2) ∫ sin(x) dx</code></p>
+                <p><strong>步骤 3:</strong> 积分：
+                <br><code>= (1/2) * [(-1/5)cos(5x)] + (1/2) * [-cos(x)] + C</code>
+                <br><code>= - (1/10)cos(5x) - (1/2)cos(x) + C</code></p>
+                <p class="final-answer">最终答案: - (1/10)cos(5x) - (1/2)cos(x) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 33: <code>∫ 1 / (x² - 2x + 5)^(3/2) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 配方后进行三角换元。</p>
+                <p><strong>步骤 1:</strong> 配方分母内部：
+                <br><code>x² - 2x + 5 = (x² - 2x + 1) + 4 = (x - 1)² + 4</code></p>
+                <p><strong>步骤 2:</strong> 重写积分：
+                <br><code>∫ 1 / ((x - 1)² + 4)^(3/2) dx</code></p>
+                <p><strong>步骤 3 (三角换元):</strong> (<code>u² + a²</code> 形式, <code>u = x - 1</code>, <code>a = 2</code>)
+                <br>设 <code>x - 1 = 2tan(θ)</code>。
+                <br><code>dx = 2sec²(θ) dθ</code>
+                <br>分母: <code>((2tan(θ))² + 4)^(3/2) = (4tan²(θ) + 4)^(3/2) = (4sec²(θ))^(3/2) = 8sec³(θ)</code></p>
+                <p><strong>步骤 4:</strong> 替换积分：
+                <br><code>∫ (1 / 8sec³(θ)) * (2sec²(θ) dθ) = (1/4) ∫ 1 / sec(θ) dθ</code></p>
+                <p><strong>步骤 5:</strong> 化简并积分：
+                <br><code>= (1/4) ∫ cos(θ) dθ = (1/4)sin(θ) + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>tan(θ) = (x - 1) / 2</code> (对边=x-1, 邻边=2)
+                <br>斜边 = <code>√((x - 1)² + 2²) = √(x² - 2x + 5)</code>
+                <br><code>sin(θ) = 对边 / 斜边 = (x - 1) / √(x² - 2x + 5)</code>
+                <br><code>= (1/4) * (x - 1) / √(x² - 2x + 5) + C</code></p>
+                <p class="final-answer">最终答案: (x - 1) / (4√(x² - 2x + 5)) + C</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>题目 34: <code>∫ √(x² - 1) dx</code> (x > 1) 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 三角换元法 (<code>x² - a²</code> 形式)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>x = sec(θ)</code> (<code>a=1</code>)。
+                <br><code>dx = sec(θ)tan(θ) dθ</code>
+                <br><code>√(x² - 1) = √(sec²(θ) - 1) = √(tan²(θ)) = tan(θ)</code> (因 <code>x > 1</code>)</p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ tan(θ) * (sec(θ)tan(θ) dθ) = ∫ tan²(θ)sec(θ) dθ</code></p>
+                <p><strong>步骤 3:</strong> 使用 <code>tan²(θ) = sec²(θ) - 1</code>：
+                <br><code>∫ (sec²(θ) - 1)sec(θ) dθ = ∫ (sec³(θ) - sec(θ)) dθ</code>
+                <br><code>= ∫ sec³(θ) dθ - ∫ sec(θ) dθ</code></p>
+                <p><strong>步骤 4:</strong> 使用标准积分结果 (<code>∫ sec³(θ) dθ</code> 见题目18)：
+                <br><code>∫ sec³(θ) dθ = (1/2)(sec(θ)tan(θ) + ln|sec(θ) + tan(θ)|)</code>
+                <br><code>∫ sec(θ) dθ = ln|sec(θ) + tan(θ)|</code></p>
+                <p><strong>步骤 5:</strong> 合并：
+                <br><code>= (1/2)(sec(θ)tan(θ) + ln|sec(θ) + tan(θ)|) - ln|sec(θ) + tan(θ)| + C</code>
+                <br><code>= (1/2)sec(θ)tan(θ) - (1/2)ln|sec(θ) + tan(θ)| + C</code></p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code>：
+                <br><code>sec(θ) = x</code>
+                <br><code>tan(θ) = √(sec²(θ) - 1) = √(x² - 1)</code>
+                <br><code>= (1/2)x√(x² - 1) - (1/2)ln|x + √(x² - 1)| + C</code></p>
+                <p class="final-answer">最终答案: (1/2)x√(x² - 1) - (1/2)ln|x + √(x² - 1)| + C</p>
+            </div>
+        </details>
+        
+        <details>
+            <summary>题目 35: <code>∫ 1 / ((1 + x)^(1/2) + (1 + x)^(1/3)) dx</code> 的解析</summary>
+            <div class="solution-content">
+                <p><strong>方法:</strong> 有理化换元 (根式替换)。</p>
+                <p><strong>步骤 1:</strong> 设 <code>u = (1 + x)^(1/6)</code> (取2和3的最小公倍数6)。
+                <br><code>u² = (1 + x)^(1/3)</code>
+                <br><code>u³ = (1 + x)^(1/2)</code>
+                <br><code>u^6 = 1 + x</code>
+                <br><code>6u^5 du = dx</code></p>
+                <p><strong>步骤 2:</strong> 替换积分：
+                <br><code>∫ 1 / (u³ + u²) * (6u^5 du) = ∫ (6u^5) / (u²(u + 1)) du</code>
+                <br><code>= ∫ 6u³ / (u + 1) du</code></p>
+                <p><strong>步骤 3:</strong> (技巧) 设 <code>v = u + 1</code>, <code>u = v - 1</code>, <code>du = dv</code>：
+                <br><code>∫ 6(v - 1)³ / v dv = 6 ∫ (v³ - 3v² + 3v - 1) / v dv</code>
+                <br> (或者使用多项式长除法 <code>6u³ / (u+1) = 6(u² - u + 1 - 1/(u+1))</code> )</p>
+                <p><strong>步骤 4:</strong> 拆分并积分：
+                <br><code>6 ∫ (v² - 3v + 3 - 1/v) dv</code>
+                <br><code>= 6 [v³/3 - 3v²/2 + 3v - ln|v|] + C</code>
+                <br><code>= 2v³ - 9v² + 18v - 6ln|v| + C</code></p>
+                <p><strong>步骤 5:</strong> 换回 <code>u</code> (<code>v = u + 1</code>)：
+                <br><code>= 2(u + 1)³ - 9(u + 1)² + 18(u + 1) - 6ln|u + 1| + C</code>
+                <br> (展开并合并常数项... 但保留此形式更清晰)</p>
+                <p><strong>步骤 6:</strong> 换回 <code>x</code> (<code>u = (1 + x)^(1/6)</code>)：
+                <br><code>= 2((1+x)^(1/6) + 1)³ - 9((1+x)^(1/6) + 1)² + 18((1+x)^(1/6) + 1) - 6ln((1+x)^(1/6) + 1) + C</code>
+                <br><em>(注: 也可以在步骤 3 使用长除法的结果积分)</em>
+                <br><code>∫ 6(u² - u + 1 - 1/(u+1)) du</code>
+                <br><code>= 6[u³/3 - u²/2 + u - ln|u+1|] + C</code>
+                <br><code>= 2u³ - 3u² + 6u - 6ln|u+1| + C</code>
+                <br><code>= 2(1+x)^(1/2) - 3(1+x)^(1/3) + 6(1+x)^(1/6) - 6ln((1+x)^(1/6) + 1) + C</code> (此为更简形式)</p>
+                <p class="final-answer">最终答案: 2√(1+x) - 3(1+x)^(1/3) + 6(1+x)^(1/6) - 6ln((1+x)^(1/6) + 1) + C</p>
+            </div>
+        </details>
+
+    </div>
+
+</body>
+</html>
